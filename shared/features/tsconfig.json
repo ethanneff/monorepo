@@ -1,0 +1,10 @@
+{
+  "extends": "@tooling/tsconfig/package",
+  "include": [
+    "src",
+    "../components/src/Col",
+    "../components/src/Row",
+    "../components/src/SafeAreaView",
+    "../components/src/View"
+  ]
+}
