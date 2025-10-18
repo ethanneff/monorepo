@@ -1,0 +1,29 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "lint": "turbo run lint --parallel",
+    "test": "turbo run test --parallel",
+    "clean": "./tooling/scripts/clean.sh",
+    "format": "./tooling/scripts/format.sh",
+    "preinstall": "npx only-allow pnpm",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "husky": "9.1.7",
+    "knip": "5.66.0",
+    "madge": "8.0.0",
+    "only-allow": "1.2.1",
+    "prettier": "3.6.2",
+    "shellcheck": "4.1.0",
+    "sherif": "1.6.1",
+    "turbo": "2.5.8"
+  },
+  "packageManager": "pnpm@10.18.3",
+  "name": "@shared/monorepo",
+  "engines": {
+    "node": "24",
+    "pnpm": "10.18.3"
+  }
+}
