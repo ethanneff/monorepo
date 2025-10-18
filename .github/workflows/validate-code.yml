@@ -1,0 +1,48 @@
+name: Validate Code
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  validateTurbo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Pre install dependencies
+        uses: ./.github/actions/pre-install
+        with:
+          PLATFORM: 'js'
+
+      - name: Cache for Turbo
+        uses: rharkor/caching-for-turbo@v2.2.1
+
+      - name: Run Turbo
+        run: pnpm lint test
+
+  validateFormat:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Pre install dependencies
+        uses: ./.github/actions/pre-install
+        with:
+          PLATFORM: 'js'
+
+      - name: Run format
+        run: pnpm format
+
+      - name: Prepare slack
+        if: always()
+        uses: ./.github/actions/prepare-slack

@@ -1,0 +1,17 @@
+name: Post install dependencies
+
+inputs:
+  PLATFORM:
+    description: 'android | ios | js'
+    required: true
+    default: 'js'
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Save DerivedData cache
+      if: ${{ inputs.PLATFORM == 'ios' }}
+      uses: actions/cache/save@v4
+      with:
+        path: apps/mobile/fastlane/DerivedData
+        key: ${{ runner.os }}-derived-data-xcode-${{ env.XCODE_VERSION }}-${{ hashFiles('apps/mobile/ios/Podfile.lock') }}-${{ hashFiles('apps/mobile/package.json') }}
