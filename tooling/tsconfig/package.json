@@ -1,0 +1,10 @@
+{
+  "exports": {
+    "./package": "./src/tsconfig.package.json",
+    "./react": "./src/tsconfig.react.json",
+    "./react-native": "./src/tsconfig.react-native.json"
+  },
+  "name": "@tooling/tsconfig",
+  "private": true,
+  "version": "0.0.0"
+}

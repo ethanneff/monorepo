@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "compilerOptions": {
+    "declaration": false,
+    "declarationMap": false,
+    "jsx": "preserve",
+    "moduleResolution": "bundler"
+  },
+  "extends": "./tsconfig.base.json"
+}
