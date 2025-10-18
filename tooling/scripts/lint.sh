@@ -6,8 +6,6 @@
 
 set -e
 
-# Suppress experimental warnings (like JSON modules) https://github.com/nodejs/node/issues/51347#issuecomment-1893074523
-export NODE_OPTIONS="${NODE_OPTIONS:-} --no-warnings=ExperimentalWarning:JSON modules"
 mkdir -p .cache
 
 if [ "$CI" = "true" ]; then
