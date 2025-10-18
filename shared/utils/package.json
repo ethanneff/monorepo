@@ -1,0 +1,16 @@
+{
+  "dependencies": {},
+  "devDependencies": {
+    "@tooling/eslint": "workspace:*",
+    "@tooling/tsconfig": "workspace:*"
+  },
+  "main": "src/index.ts",
+  "module": "src/index.ts",
+  "name": "@shared/utils",
+  "private": true,
+  "scripts": {
+    "lint": "./../../tooling/scripts/lint.sh",
+    "test": "jest"
+  },
+  "version": "0.0.0"
+}
