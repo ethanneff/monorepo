@@ -1,9 +1,7 @@
-# OSX
-#
+# macOS
 .DS_Store
 
-# Xcode
-#
+# Xcode / iOS
 build/
 *.pbxuser
 !default.pbxuser
@@ -21,9 +19,11 @@ DerivedData
 *.ipa
 *.xcuserstate
 **/.xcode.env.local
+ios/tmp.xcconfig
+*.app.dSYM.zip
+*.mobileprovision
 
-# Android/IntelliJ
-#
+# Android / IntelliJ
 build/
 .idea
 .gradle
@@ -33,117 +33,82 @@ local.properties
 .cxx/
 *.keystore
 !debug.keystore
+*.jks
 
-# node.js
-#
+# Node.js
 node_modules/
-npm-debug.log
-yarn-error.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+*.log
 
-# fastlane
-#
-# It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the
-# screenshots whenever they are needed.
-# For more information about the recommended setup visit:
-# https://docs.fastlane.tools/best-practices/source-control/
-**/fastlane/report.xml
-**/fastlane/Preview.html
-**/fastlane/screenshots
-**/fastlane/test_output
-
-# Bundle artifact
-#
-*.jsbundle
-
-# Ruby / CocoaPods
-#
-**/Pods/
-/vendor/bundle/
-
-# Temporary files created by Metro to check the health of the file watcher
-#
-.metro-health-check*
-
-# testing
-#
-/coverage
-
-# Yarn
-#
+# Yarn (Plug'n'Play, versions, etc.)
 .yarn/*
 !.yarn/patches
 !.yarn/plugins
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+/.pnp
+.pnp.*
 
-# react-native-config
-#
-ios/tmp.xcconfig
-
-# expo
-# 
-.expo
+# Expo / React Native
+.expo/
+.expo/*
+expo-env.d.ts
 web-build/
+dist/
+.next/
+.out/
+.turbo/
+.cache/
+vendor/
+app-example
 
-# custom
-#
+# Metro
+.metro-health-check*
+
+# Fastlane
+**/fastlane/report.xml
+**/fastlane/Preview.html
+**/fastlane/screenshots
+**/fastlane/test_output
+
+# Ruby / CocoaPods
+**/Pods/
+/vendor/bundle/
+
+# Testing
+coverage/
+test-results/
+storybook-static/
+
+# Build outputs
+/build
+*.jsbundle
+next-env.d.ts
+
+# Environment files
 .env*
+.env*.local
 !apps/web/environments/.env*
+
+# Keys / Certificates
 google-key.json
 apple-key.p8
 *.cer
-*.app.dSYM.zip
-tsconfig.tsbuildinfo
-vendor/
-dist/
-next-env.d.ts
-expo-env.d.ts
-.cache/
-.turbo/
-.next/
-.expo/
-*.log
-test-results/
-coverage/
-storybook-static/
-
-# dependencies
-/node_modules
-/.pnp
-.pnp.*
-.yarn/*
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/versions
-
-# testing
-/coverage
-
-# next.js
-/.next/
-/out/
-
-# production
-/build
-
-# misc
-.DS_Store
 *.pem
+*.p8
+*.p12
+*.key
+*.orig.*
 
-# debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-.pnpm-debug.log*
-
-# env files (can opt-in for committing if needed)
-.env*
-
-# vercel
+# Vercel
 .vercel
 
-# typescript
+# TypeScript
 *.tsbuildinfo
-next-env.d.ts
+
+# Misc
+*.orig.*

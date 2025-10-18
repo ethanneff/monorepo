@@ -23,7 +23,7 @@
   "packageManager": "pnpm@10.18.3",
   "name": "@shared/monorepo",
   "engines": {
-    "node": "24",
+    "node": "22",
     "pnpm": "10.18.3"
   }
 }
