@@ -1,0 +1,9 @@
+echo "Running pre-commit hook..."
+
+if [ "$CI" = "true" ]; then
+  echo "CI environment detected. Skipping pre-commit hooks."
+  exit 0
+fi
+
+# remove empty directories that are not tracked by git
+find . -type d -empty -delete
