@@ -541,6 +541,9 @@ importers:
       eslint-plugin-jsx-a11y:
         specifier: 6.10.2
         version: 6.10.2(eslint@9.38.0(jiti@2.6.1))
+      eslint-plugin-next:
+        specifier: ^0.0.0
+        version: 0.0.0
       eslint-plugin-perfectionist:
         specifier: 4.15.1
         version: 4.15.1(eslint@9.38.0(jiti@2.6.1))(typescript@5.9.3)
@@ -3358,6 +3361,9 @@ packages:
     engines: {node: '>=4.0'}
     peerDependencies:
       eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8 || ^9
+
+  eslint-plugin-next@0.0.0:
+    resolution: {integrity: sha512-IldNDVb6WNduggwRbYzSGZhaskUwVecJ6fhmqwX01+S1aohwAWNzU4me6y47DDzpD/g0fdayNBGxEdt9vKkUtg==}
 
   eslint-plugin-perfectionist@4.15.1:
     resolution: {integrity: sha512-MHF0cBoOG0XyBf7G0EAFCuJJu4I18wy0zAoT1OHfx2o6EOx1EFTIzr2HGeuZa1kDcusoX0xJ9V7oZmaeFd773Q==}
@@ -10156,6 +10162,8 @@ snapshots:
       object.fromentries: 2.0.8
       safe-regex-test: 1.1.0
       string.prototype.includes: 2.0.1
+
+  eslint-plugin-next@0.0.0: {}
 
   eslint-plugin-perfectionist@4.15.1(eslint@9.38.0(jiti@2.6.1))(typescript@5.9.3):
     dependencies:

@@ -19,89 +19,24 @@ import regex from 'eslint-plugin-regexp';
 import sonarjs from 'eslint-plugin-sonarjs';
 import testingLibrary from 'eslint-plugin-testing-library';
 import unicorn from 'eslint-plugin-unicorn';
-import globals from 'globals';
-import { dirname } from 'node:path';
-import { fileURLToPath } from 'node:url';
-import typescript from 'typescript-eslint';
+import { defineConfig } from 'eslint/config';
+import { default as tseslint, default as typescript } from 'typescript-eslint';
 
-// TODO: eslint-plugin-react-perf
-// TODO: eslint-plugin-react-native, @react-native/eslint-config
+// TODO: eslint-plugin-react-native, @react-native/eslint-config, eslint-plugin-expo, eslint-plugin-react-perf
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
-
-// eslint-disable-next-line no-restricted-syntax
-export default typescript.config({
-  extends: [
-    // eslint
-    eslint.configs.all,
-    importPlugin.flatConfigs.recommended,
-    importPlugin.flatConfigs.typescript,
-    // testing
-    jest.configs['flat/all'], // https://github.com/jest-community/eslint-plugin-jest
-    testingLibrary.configs['flat/react'], // https://github.com/testing-library/eslint-plugin-testing-library
-    // react
-    react.configs.flat['all'],
-    react.configs.flat['jsx-runtime'], // https://github.com/jsx-eslint/eslint-plugin-react
-    reactPlugin.configs['recommended-type-checked'], // https://github.com/Rel1cx/eslint-react
-    reactRefresh.configs['recommended'], // https://github.com/ArnaudBarre/eslint-plugin-react-refresh
-    useEffect.configs.recommended, // https://github.com/NickvanDyke/eslint-plugin-react-you-might-not-need-an-effect
-    // plugins
-    reactQuery.configs['flat/recommended'], // https://tanstack.com/query/latest/docs/eslint/eslint-plugin-query
-    sonarjs.configs['recommended'], // https://github.com/SonarSource/SonarJS
-    unicorn.configs['recommended'], // https://github.com/sindresorhus/eslint-plugin-unicorn
-    promise.configs['flat/recommended'], // https://github.com/eslint-community/eslint-plugin-promise
-    regex.configs['flat/recommended'], // https://github.com/gmullerb/eslint-plugin-regex
-    jsxA11y.flatConfigs['recommended'], // https://github.com/jsx-eslint/eslint-plugin-jsx-a11y
-    comments['recommended'], // https://mysticatea.github.io/eslint-plugin-eslint-comments/
-    // typescript
-    typescript.configs['strictTypeChecked'], // https://typescript-eslint.io/getting-started
-    typescript.configs['stylisticTypeChecked'],
-    // styling
-    stylistic.configs.customize({
-      // https://eslint.style/packages/default
-      semi: true,
-      braceStyle: '1tbs',
-      arrowParens: true,
-      jsx: true,
-    }),
-    perfectionist.configs['recommended-natural'], // https://perfectionist.dev/
-    prettier,
-  ],
-  ignores: ['dist', 'node_modules'],
-  settings: {
-    react: { version: 'detect' },
-    'import/resolver': {
-      typescript: {
-        alwaysTryTypes: true,
-        project: './tsconfig.json',
-      },
-      node: {
-        extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
-      },
-    },
-  },
+const configs = {
   languageOptions: {
     parser: typescript.parser,
-    parserOptions: {
-      projectService: true,
-      tsconfigRootDir: __dirname,
-      ecmaVersion: 'latest',
-      sourceType: 'module',
-    },
-    globals: {
-      ...globals.node,
-    },
+    parserOptions: { projectService: true },
   },
   plugins: {
-    'react-hooks': reactHooks, // https://www.npmjs.com/package/eslint-plugin-react-hooks
     'react-compiler': reactCompiler, // https://www.npmjs.com/package/eslint-plugin-react-compiler
-    '@next/next': nextPlugin, // https://nextjs.org/docs/app/api-reference/config/eslint
   },
+  ignores: ['dist', 'node_modules', 'build'],
+};
+
+const rules = {
   rules: {
-    // legacy plugins
-    ...reactHooks.configs.recommended.rules,
-    ...nextPlugin.configs['recommended'].rules,
-    ...nextPlugin.configs['core-web-vitals'].rules,
     'react-compiler/react-compiler': 'error',
     // plugin default overrides
     '@next/next/no-html-link-for-pages': 'off',
@@ -248,4 +183,46 @@ export default typescript.config({
     'sonarjs/no-commented-code': 'off',
     'sonarjs/deprecation': 'off',
   },
-});
+};
+
+export default defineConfig(
+  // eslint
+  eslint.configs.all,
+  importPlugin.flatConfigs.recommended,
+  importPlugin.flatConfigs.typescript,
+  tseslint.configs.recommended,
+  // testing
+  jest.configs['flat/all'], // https://github.com/jest-community/eslint-plugin-jest
+  testingLibrary.configs['flat/react'], // https://github.com/testing-library/eslint-plugin-testing-library
+  // react
+  react.configs.flat['all'],
+  react.configs.flat['jsx-runtime'], // https://github.com/jsx-eslint/eslint-plugin-react
+  reactHooks.configs.flat.recommended, // https://github.com/facebook/react/tree/main/packages/eslint-plugin-react-hooks
+  reactPlugin.configs['recommended-type-checked'], // https://github.com/Rel1cx/eslint-react
+  reactRefresh.configs['recommended'], // https://github.com/ArnaudBarre/eslint-plugin-react-refresh
+  useEffect.configs.recommended, // https://github.com/NickvanDyke/eslint-plugin-react-you-might-not-need-an-effect
+  nextPlugin.flatConfig.recommended, // https://nextjs.org/docs/app/api-reference/config/eslint
+  nextPlugin.flatConfig.coreWebVitals, // https://nextjs.org/docs/app/api-reference/config/eslint
+  // plugins
+  reactQuery.configs['flat/recommended'], // https://tanstack.com/query/latest/docs/eslint/eslint-plugin-query
+  sonarjs.configs['recommended'], // https://github.com/SonarSource/SonarJS
+  unicorn.configs['recommended'], // https://github.com/sindresorhus/eslint-plugin-unicorn
+  promise.configs['flat/recommended'], // https://github.com/eslint-community/eslint-plugin-promise
+  regex.configs['flat/all'], // https://github.com/gmullerb/eslint-plugin-regex
+  jsxA11y.flatConfigs['recommended'], // https://github.com/jsx-eslint/eslint-plugin-jsx-a11y
+  comments['recommended'], // https://mysticatea.github.io/eslint-plugin-eslint-comments/
+  // typescript
+  typescript.configs['strictTypeChecked'], // https://typescript-eslint.io/getting-started
+  typescript.configs['stylisticTypeChecked'],
+  // styling
+  stylistic.configs.customize({
+    semi: true, // https://eslint.style/packages/default
+    braceStyle: '1tbs',
+    arrowParens: true,
+    jsx: true,
+  }),
+  perfectionist.configs['recommended-natural'], // https://perfectionist.dev/
+  prettier, // https://github.com/prettier/eslint-plugin-prettier
+  configs,
+  rules,
+);
