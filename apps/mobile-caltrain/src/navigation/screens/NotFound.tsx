@@ -1,20 +1,31 @@
-import { Text, Button } from '@react-navigation/elements';
-import { StyleSheet, View } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import { Button, Text, View } from '@shared/components';
+import { useCallback } from 'react';
+import { StyleSheet } from 'react-native';
 
-export function NotFound() {
+export const NotFound = () => {
+  const navigation = useNavigation();
+
+  const handlePress = useCallback(() => {
+    navigation.navigate('HomeTabs' as never);
+  }, [navigation]);
+
   return (
     <View style={styles.container}>
-      <Text>404</Text>
-      <Button screen="HomeTabs">Go to Home</Button>
+      <Text title="404" />
+      <Button
+        onPress={handlePress}
+        title="Go to Home"
+      />
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'center',
     alignItems: 'center',
+    flex: 1,
     gap: 10,
+    justifyContent: 'center',
   },
 });

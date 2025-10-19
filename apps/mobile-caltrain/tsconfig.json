@@ -1,11 +1,5 @@
 {
-  "extends": "expo/tsconfig.base",
-  "compilerOptions": {
-    "strict": true,
-    "moduleResolution": "bundler",
-    "paths": {
-      "@/*": ["./src/*"]
-    }
-  },
+  "extends": "@tooling/tsconfig/react-native",
+  "compilerOptions": { "paths": { "@/*": ["./src/*"] } },
   "include": ["**/*.ts", "**/*.tsx"]
 }

@@ -1,22 +1,21 @@
-import { Image } from 'expo-image';
-import { Platform, StyleSheet } from 'react-native';
-
 import { Collapsible } from '@/components/Collapsible';
 import { ExternalLink } from '@/components/ExternalLink';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import { IconSymbol } from '@/components/ui/IconSymbol';
+import { Image } from 'expo-image';
+import { Platform, StyleSheet } from 'react-native';
 
-export function Explore() {
+export const Explore = () => {
   return (
     <ParallaxScrollView
-      headerBackgroundColor={{ light: '#D0D0D0', dark: '#353636' }}
+      headerBackgroundColor={{ dark: '#353636', light: '#D0D0D0' }}
       headerImage={
         <IconSymbol
-          size={310}
           color="#808080"
           name="chevron.left.forwardslash.chevron.right"
+          size={310}
           style={styles.headerImage}
         />
       }
@@ -120,12 +119,12 @@ export function Explore() {
       </Collapsible>
     </ParallaxScrollView>
   );
-}
+};
 
 const styles = StyleSheet.create({
   headerImage: {
-    color: '#808080',
     bottom: -90,
+    color: '#808080',
     left: -35,
     position: 'absolute',
   },

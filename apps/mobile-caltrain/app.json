@@ -1,25 +1,18 @@
 {
   "expo": {
-    "name": "com.eneff.train",
-    "slug": "com.eneff.train",
-    "version": "1.0.0",
-    "orientation": "portrait",
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#ffffff",
+        "foregroundImage": "src/assets/images/adaptive-icon.png"
+      }
+    },
     "icon": "src/assets/images/icon.png",
-    "userInterfaceStyle": "automatic",
-    "newArchEnabled": true,
-    "scheme": "comenefftrain",
     "ios": {
       "supportsTablet": true
     },
-    "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "src/assets/images/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      }
-    },
-    "web": {
-      "favicon": "src/assets/images/favicon.png"
-    },
+    "name": "mobile-caltrain",
+    "newArchEnabled": true,
+    "orientation": "portrait",
     "plugins": [
       "expo-asset",
       [
@@ -29,6 +22,13 @@
           "image": "src/assets/images/splash-icon.png"
         }
       ]
-    ]
+    ],
+    "scheme": "mobile-caltrain",
+    "slug": "mobile-caltrain",
+    "userInterfaceStyle": "automatic",
+    "version": "1.0.0",
+    "web": {
+      "favicon": "src/assets/images/favicon.png"
+    }
   }
 }

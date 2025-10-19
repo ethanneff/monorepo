@@ -1,20 +1,23 @@
-import 'react-native-reanimated';
 import { DarkTheme, DefaultTheme } from '@react-navigation/native';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
-import * as React from 'react';
+import { useCallback } from 'react';
 import { useColorScheme } from 'react-native';
-
+import 'react-native-reanimated';
 import { Colors } from './constants/Colors';
 import { Navigation } from './navigation';
 
-SplashScreen.preventAutoHideAsync();
+void SplashScreen.preventAutoHideAsync();
 
-export function App() {
+export const App = () => {
   const colorScheme = useColorScheme();
   const [loaded] = useFonts({
     SpaceMono: require('./assets/fonts/SpaceMono-Regular.ttf'),
   });
+
+  const handleReady = useCallback(() => {
+    void SplashScreen.hideAsync();
+  }, []);
 
   if (!loaded) {
     // Async font loading only occurs in development.
@@ -27,7 +30,7 @@ export function App() {
           ...DarkTheme,
           colors: {
             ...DarkTheme.colors,
-            primary: Colors[colorScheme ?? 'light'].tint,
+            primary: Colors[colorScheme].tint,
           },
         }
       : {
@@ -40,17 +43,9 @@ export function App() {
 
   return (
     <Navigation
+      linking={{ enabled: 'auto', prefixes: ['helloworld://'] }}
+      onReady={handleReady}
       theme={theme}
-      linking={{
-        enabled: 'auto',
-        prefixes: [
-          // Change the scheme to match your app's scheme defined in app.json
-          'helloworld://',
-        ],
-      }}
-      onReady={() => {
-        SplashScreen.hideAsync();
-      }}
     />
   );
-}
+};

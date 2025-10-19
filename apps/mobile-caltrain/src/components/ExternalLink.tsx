@@ -2,9 +2,9 @@ import { openBrowserAsync } from 'expo-web-browser';
 import { type ComponentProps } from 'react';
 import { Platform, Pressable } from 'react-native';
 
-type Props = ComponentProps<typeof Pressable> & { href: string };
+type Properties = ComponentProps<typeof Pressable> & { readonly href: string };
 
-export function ExternalLink({ href, children, ...rest }: Props) {
+export const ExternalLink = ({ children, href, ...rest }: Properties) => {
   return (
     <Pressable
       {...rest}
@@ -21,4 +21,4 @@ export function ExternalLink({ href, children, ...rest }: Props) {
       {children}
     </Pressable>
   );
-}
+};
