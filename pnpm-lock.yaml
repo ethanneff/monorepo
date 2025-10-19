@@ -51,6 +51,9 @@ importers:
       '@tailwindcss/postcss':
         specifier: ^4
         version: 4.1.14
+      '@tooling/nextjs':
+        specifier: workspace:*
+        version: link:../../tooling/nextjs
       '@types/node':
         specifier: ^20
         version: 20.19.22
@@ -382,6 +385,9 @@ importers:
       '@tailwindcss/postcss':
         specifier: ^4
         version: 4.1.14
+      '@tooling/nextjs':
+        specifier: workspace:*
+        version: link:../../tooling/nextjs
       '@types/node':
         specifier: ^20
         version: 20.19.22
@@ -437,6 +443,9 @@ importers:
       '@tooling/jest':
         specifier: workspace:*
         version: link:../../tooling/jest
+      '@tooling/nextjs':
+        specifier: workspace:*
+        version: link:../../tooling/nextjs
       '@tooling/tsconfig':
         specifier: workspace:*
         version: link:../../tooling/tsconfig
@@ -610,6 +619,12 @@ importers:
       react-test-renderer:
         specifier: 19.1.0
         version: 19.1.0(react@19.1.0)
+
+  tooling/nextjs:
+    dependencies:
+      next:
+        specifier: 15.5.6
+        version: 15.5.6(babel-plugin-react-compiler@1.0.0)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
 
   tooling/scripts: {}
 

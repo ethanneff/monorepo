@@ -12,6 +12,7 @@
     "@tailwindcss/postcss": "4",
     "@tooling/eslint": "workspace:*",
     "@tooling/jest": "workspace:*",
+    "@tooling/nextjs": "workspace:*",
     "@tooling/tsconfig": "workspace:*",
     "tailwindcss": "4"
   },
