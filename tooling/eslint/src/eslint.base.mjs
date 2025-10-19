@@ -162,11 +162,6 @@ const rules = {
         message:
           'Using `export *` is not allowed. Use explicit named exports instead for better tree shaking.',
       },
-      {
-        selector: 'ExportDefaultDeclaration',
-        message:
-          'Using `export default` should be limited for special use cases. Use explicit named exports instead for better tree shaking.',
-      },
     ],
     // re-enable in the future
     'no-continue': 'off',

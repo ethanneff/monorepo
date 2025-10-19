@@ -1,16 +1,7 @@
-import { dirname } from 'path';
-import { fileURLToPath } from 'url';
-import { FlatCompat } from '@eslint/eslintrc';
+import eslintBase from '@tooling/eslint/base';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-});
-
-const eslintConfig = [
-  ...compat.extends('next/core-web-vitals', 'next/typescript'),
+export default [
+  ...eslintBase,
   {
     ignores: [
       'node_modules/**',
@@ -20,6 +11,9 @@ const eslintConfig = [
       'next-env.d.ts',
     ],
   },
+  {
+    rules: {
+      'react/jsx-no-literals': 'off',
+    },
+  },
 ];
-
-export default eslintConfig;
