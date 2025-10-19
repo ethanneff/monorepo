@@ -3,16 +3,16 @@
 - [ ] eneff.io
   - [x] share lint
   - [x] share test
-  - [ ] share next config
+  - [x] share next config
   - [x] share tsconfig
   - [ ] share components
   - [ ] share text font
   - [ ] update favicon
 - [ ] ethanneff.io
-  - [ ] copy
+  - [x] copy
   - [ ] deploy
 - [ ] eneff.com
-  - [ ] copy
+  - [x] copy
   - [ ] deploy
   - [ ] update copy
 - [ ] com.eneff.mobile.caltrain
