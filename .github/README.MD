@@ -8,6 +8,7 @@
   - [ ] share components
   - [ ] share text font
   - [ ] update favicon
+  - [ ] deploy
 - [ ] ethanneff.io
   - [x] copy
   - [ ] deploy
@@ -15,9 +16,14 @@
   - [x] copy
   - [ ] deploy
   - [ ] update copy
-- [ ] com.eneff.mobile.caltrain
+- [ ] caltrain
   - [ ] share lint
   - [ ] share test
   - [ ] share tsconfig
   - [ ] share text font
   - [ ] deploy
+- [ ] learning
+  - [ ] copy
+- [ ] discover
+  - [ ] copy
+  - [ ] format

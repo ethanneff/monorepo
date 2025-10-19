@@ -1,5 +1,3 @@
-'use client';
-
 import { Text } from '@shared/components';
 
 const Home = () => {

@@ -1,5 +1,3 @@
-'use client';
-
 import { Text } from '@shared/components';
 
 const Home = () => {
@@ -10,7 +8,7 @@ const Home = () => {
           className="select-none"
           href="https://www.eneff.com"
         >
-          <h1 className="text-4xl font-bold animate-pulse">hello</h1>
+          <h1 className="text-4xl font-bold animate-pulse">eneff</h1>
         </a>
         <Text title="" />
       </main>
