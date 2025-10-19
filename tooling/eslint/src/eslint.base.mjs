@@ -24,7 +24,6 @@ import { dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import typescript from 'typescript-eslint';
 
-// TODO: eslint-plugin-import, import/no-cycle
 // TODO: eslint-plugin-react-perf
 // TODO: eslint-plugin-react-native, @react-native/eslint-config
 
@@ -33,6 +32,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 // eslint-disable-next-line no-restricted-syntax
 export default typescript.config({
   extends: [
+    // eslint
     eslint.configs.all,
     importPlugin.flatConfigs.recommended,
     importPlugin.flatConfigs.typescript,
@@ -48,7 +48,7 @@ export default typescript.config({
     // plugins
     reactQuery.configs['flat/recommended'], // https://tanstack.com/query/latest/docs/eslint/eslint-plugin-query
     sonarjs.configs['recommended'], // https://github.com/SonarSource/SonarJS
-    unicorn.configs['flat/recommended'], // https://github.com/sindresorhus/eslint-plugin-unicorn
+    unicorn.configs['recommended'], // https://github.com/sindresorhus/eslint-plugin-unicorn
     promise.configs['flat/recommended'], // https://github.com/eslint-community/eslint-plugin-promise
     regex.configs['flat/recommended'], // https://github.com/gmullerb/eslint-plugin-regex
     jsxA11y.flatConfigs['recommended'], // https://github.com/jsx-eslint/eslint-plugin-jsx-a11y
@@ -100,8 +100,8 @@ export default typescript.config({
   rules: {
     // legacy plugins
     ...reactHooks.configs.recommended.rules,
-    // ...nextPlugin.configs['recommended'].rules,
-    // ...nextPlugin.configs['core-web-vitals'].rules,
+    ...nextPlugin.configs['recommended'].rules,
+    ...nextPlugin.configs['core-web-vitals'].rules,
     'react-compiler/react-compiler': 'error',
     // plugin default overrides
     '@next/next/no-html-link-for-pages': 'off',
