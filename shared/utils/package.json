@@ -1,5 +1,5 @@
 {
-  "dependencies": {},
+  "version": "0.0.0",
   "devDependencies": {
     "@tooling/eslint": "workspace:*",
     "@tooling/tsconfig": "workspace:*"
@@ -11,6 +11,5 @@
   "scripts": {
     "lint": "./../../tooling/scripts/lint.sh",
     "test": "jest"
-  },
-  "version": "0.0.0"
+  }
 }
