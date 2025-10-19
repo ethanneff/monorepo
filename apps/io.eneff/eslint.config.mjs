@@ -11,9 +11,5 @@ export default [
       'next-env.d.ts',
     ],
   },
-  {
-    rules: {
-      'react/jsx-no-literals': 'off',
-    },
-  },
+  { rules: { 'react/jsx-no-literals': 'off' } },
 ];
