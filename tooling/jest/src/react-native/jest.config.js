@@ -5,7 +5,9 @@ module.exports = {
       '<rootDir>/../../tooling/jest/src/jest.files.js',
   },
   transformIgnorePatterns: ['node_modules/(?!react-native)/', 'jest-runner'],
-  setupFilesAfterEnv: ['<rootDir>/../../tooling/jest/src/jest.setup.js'],
+  setupFilesAfterEnv: [
+    '<rootDir>/../../tooling/jest/src/react-native/jest.setup.js',
+  ],
   setupFiles: ['<rootDir>/../../node_modules/jest-offline'],
   coverageDirectory: '<rootDir>/.cache/jest',
   globals: {

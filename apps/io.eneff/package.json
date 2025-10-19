@@ -20,9 +20,9 @@
   "scripts": {
     "build": "next build",
     "dev": "next dev",
-    "lint": "eslint",
+    "lint": "./../../tooling/scripts/lint.sh",
     "start": "next start",
-    "test": "jest"
+    "test": "./../../tooling/scripts/test.sh"
   },
   "version": "0.0.0"
 }

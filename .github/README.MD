@@ -14,6 +14,7 @@
 - [ ] eneff.com
   - [ ] copy
   - [ ] deploy
+  - [ ] update copy
 - [ ] com.eneff.mobile.caltrain
   - [ ] share lint
   - [ ] share test
