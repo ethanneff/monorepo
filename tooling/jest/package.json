@@ -12,7 +12,7 @@
   },
   "exports": {
     "./react": "./src/react/jest.config.js",
-    "./react-native": "./src/jest.config.js"
+    "./react-native": "./src/react-native/jest.config.js"
   },
   "name": "@tooling/jest",
   "private": true,
