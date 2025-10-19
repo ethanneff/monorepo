@@ -13,7 +13,10 @@
     "**/babel.config.js",
     "**/*.ios.*",
     "**/*.android.*",
-    "**/*.web.*"
+    "**/*.web.*",
+    "**/src/app/**",
+    "**/next.config.ts",
+    "**/postcss.config.mjs"
   ],
   "rules": {
     "binaries": "off",

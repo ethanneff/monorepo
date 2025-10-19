@@ -32,5 +32,3 @@ export const Root = ({
     </html>
   );
 };
-
-export default Root;

@@ -11,7 +11,7 @@
     "@tooling/tsconfig": "workspace:*",
     "tailwindcss": "4"
   },
-  "name": "web-ethanneff",
+  "name": "@apps/web-ethanneff",
   "private": true,
   "scripts": {
     "build": "next build",

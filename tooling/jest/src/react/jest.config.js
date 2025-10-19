@@ -16,8 +16,21 @@ function createNextJestConfig(appDir, customConfig = {}) {
       '<rootDir>/../../tooling/jest/src/react/jest.setup.js',
     ],
     testEnvironment: 'jest-environment-jsdom',
+    moduleFileExtensions: [
+      'web.js',
+      'web.jsx',
+      'web.ts',
+      'web.tsx',
+      'js',
+      'jsx',
+      'ts',
+      'tsx',
+      'json',
+      'node',
+    ],
     moduleNameMapper: {
       '^@/(.*)$': '<rootDir>/src/$1',
+      '^react-native$': 'react-native-web',
       ...customConfig.moduleNameMapper,
     },
     collectCoverageFrom: [

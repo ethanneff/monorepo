@@ -16,14 +16,14 @@
   - [x] copy
   - [ ] deploy
   - [ ] update copy
-- [ ] caltrain
-  - [ ] share lint
-  - [ ] share test
-  - [ ] share tsconfig
+- [x] caltrain
+  - [x] share lint
+  - [x] share test
+  - [x] share tsconfig
   - [ ] share text font
   - [ ] deploy
 - [ ] learning
-  - [ ] copy
-- [ ] discover
-  - [ ] copy
-  - [ ] format
+  - [x] copy
+- [x] discover
+  - [x] copy
+  - [x] format
