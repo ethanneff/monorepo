@@ -1,13 +1,22 @@
 # Monorepo
 
-- [ ] add expo and next lint
-- [ ] share lint to apps
-- [ ] share test apps
-- [ ] share components to apps
-- [ ] temp eneff.io
-- [ ] temp ethanneff.io
-- [ ] migrate eneff.io
-- [ ] deploy eneff.com
-- [ ] deploy ethanneff.com
-- [ ] deploy eneff.io
-- [ ] create com.eneff.mobile.caltrain
+- [ ] eneff.io
+  - [x] share lint
+  - [ ] share test
+  - [ ] share next config
+  - [ ] share tsconfig
+  - [ ] share components
+  - [ ] share text font
+  - [ ] update favicon
+- [ ] ethanneff.io
+  - [ ] copy
+  - [ ] deploy
+- [ ] eneff.com
+  - [ ] copy
+  - [ ] deploy
+- [ ] com.eneff.mobile.caltrain
+  - [ ] share lint
+  - [ ] share test
+  - [ ] share tsconfig
+  - [ ] share text font
+  - [ ] deploy
