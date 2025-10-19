@@ -4,7 +4,8 @@
     "declaration": false,
     "declarationMap": false,
     "jsx": "preserve",
-    "moduleResolution": "bundler"
+    "moduleResolution": "bundler",
+    "plugins": [{ "name": "next" }]
   },
   "extends": "./tsconfig.base.json"
 }
