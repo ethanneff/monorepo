@@ -2,9 +2,9 @@
 
 - [ ] eneff.io
   - [x] share lint
-  - [ ] share test
+  - [x] share test
   - [ ] share next config
-  - [ ] share tsconfig
+  - [x] share tsconfig
   - [ ] share components
   - [ ] share text font
   - [ ] update favicon
