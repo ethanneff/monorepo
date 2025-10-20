@@ -1,15 +1,16 @@
 {
   "dependencies": {
     "@shared/components": "workspace:*",
-    "@shared/features": "workspace:*"
+    "@shared/features": "workspace:*",
+    "next": "15.5.6"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "4",
+    "@tailwindcss/postcss": "4.1.14",
     "@tooling/eslint": "workspace:*",
     "@tooling/jest": "workspace:*",
     "@tooling/nextjs": "workspace:*",
     "@tooling/tsconfig": "workspace:*",
-    "tailwindcss": "4"
+    "tailwindcss": "4.1.14"
   },
   "name": "@apps/web-eneff-io",
   "private": true,

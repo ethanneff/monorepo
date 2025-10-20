@@ -8,6 +8,6 @@ describe('page', () => {
 
     render(<Home />);
 
-    expect(screen.getByText('eneff')).toBeTruthy();
+    expect(screen.getByText('Ethan Neff')).toBeTruthy();
   });
 });

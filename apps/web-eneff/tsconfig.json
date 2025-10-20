@@ -1,6 +1,9 @@
 {
   "extends": "@tooling/tsconfig/react",
-  "compilerOptions": { "plugins": [{ "name": "next" }] },
+  "compilerOptions": {
+    "plugins": [{ "name": "next" }],
+    "paths": { "@/*": ["./*"] }
+  },
   "include": [
     "next-env.d.ts",
     "**/*.ts",

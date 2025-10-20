@@ -4,6 +4,15 @@ import '@testing-library/jest-dom';
 // Set Jest timeout to prevent hanging
 jest.setTimeout(5000);
 
+// Mock IntersectionObserver for components that use scroll-based animations
+global.IntersectionObserver = class IntersectionObserver {
+  constructor() {
+    this.observe = jest.fn();
+    this.disconnect = jest.fn();
+    this.unobserve = jest.fn();
+  }
+};
+
 // Mock react-native-safe-area-context for web
 jest.mock('react-native-safe-area-context', () => ({
   SafeAreaView: ({ children, ...props }) => children,

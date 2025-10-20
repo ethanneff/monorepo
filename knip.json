@@ -14,7 +14,6 @@
     "**/*.ios.*",
     "**/*.android.*",
     "**/*.web.*",
-    "**/src/app/**",
     "**/next.config.ts",
     "**/postcss.config.mjs"
   ],

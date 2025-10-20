@@ -30,7 +30,6 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "incremental": true,
-    "target": "es2017",
-    "paths": { "@/*": ["./src/*"] }
+    "target": "es2017"
   }
 }

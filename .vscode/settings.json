@@ -25,6 +25,7 @@
     "**/CHANGELOG.md": true,
     "**/tsconfig.tsbuildinfo": true,
     "**/mobile/vendor/*": true,
+    "**/coverage/*": true,
     "**/*.log": true,
     "**/.cxx": true,
     "**/.cache": true,
