@@ -1,20 +1,43 @@
 # Monorepo
 
-- [ ] eneff.io
+## v3 app
+
+- [ ] discover
+  - [ ] core functionality
+  - [ ] library tokens
+  - [ ] copy duolingo
+  - [ ] supabase
+  - [ ] auth
+  - [ ] revenuecat
+
+## v2 polish
+
+- [ ] eneff.com
+  - [ ] update copy
+- [x] neff.app
+  - [x] build something
+  - [x] deploy
+- [ ] caltrain
+  - [ ] build poc
+  - [ ] deploy
+
+## v1 foundation
+
+- [x] eneff.io
   - [x] share lint
   - [x] share test
   - [x] share next config
   - [x] share tsconfig
-  - [ ] share components
-  - [ ] share text font
-  - [ ] update favicon
-  - [ ] deploy
-- [ ] ethanneff.io
+  - [x] share components
+  - [x] share text font
+  - [x] update favicon
+  - [x] deploy
+- [x] ethanneff.io
   - [x] copy
-  - [ ] deploy
+  - [x] deploy
 - [ ] eneff.com
   - [x] copy
-  - [ ] deploy
+  - [x] deploy
   - [ ] update copy
 - [x] caltrain
   - [x] share lint
@@ -22,7 +45,7 @@
   - [x] share tsconfig
   - [ ] share text font
   - [ ] deploy
-- [ ] learning
+- [x] learning
   - [x] copy
 - [x] discover
   - [x] copy
