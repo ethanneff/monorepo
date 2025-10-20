@@ -20,6 +20,9 @@
 - [ ] caltrain
   - [ ] build poc
   - [ ] deploy
+- [ ] migrate old code
+  - [ ] playground
+  - [ ] expo
 
 ## v1 foundation
 
