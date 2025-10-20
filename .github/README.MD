@@ -14,6 +14,7 @@
 
 - [ ] eneff.com
   - [ ] update copy
+  - [ ] analytics
 - [x] neff.app
   - [x] build something
   - [x] deploy

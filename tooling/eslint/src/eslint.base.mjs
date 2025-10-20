@@ -20,13 +20,13 @@ import sonarjs from 'eslint-plugin-sonarjs';
 import testingLibrary from 'eslint-plugin-testing-library';
 import unicorn from 'eslint-plugin-unicorn';
 import { defineConfig } from 'eslint/config';
-import { default as tseslint, default as typescript } from 'typescript-eslint';
+import typescriptPlugin from 'typescript-eslint';
 
 // TODO: eslint-plugin-react-native, @react-native/eslint-config, eslint-plugin-expo, eslint-plugin-react-perf
 
 const configs = {
   languageOptions: {
-    parser: typescript.parser,
+    parser: typescriptPlugin.parser,
     parserOptions: { projectService: true },
   },
   plugins: {
@@ -185,7 +185,6 @@ export default defineConfig(
   eslint.configs.all,
   importPlugin.flatConfigs.recommended,
   importPlugin.flatConfigs.typescript,
-  tseslint.configs.recommended,
   // testing
   jest.configs['flat/all'], // https://github.com/jest-community/eslint-plugin-jest
   testingLibrary.configs['flat/react'], // https://github.com/testing-library/eslint-plugin-testing-library
@@ -207,8 +206,8 @@ export default defineConfig(
   jsxA11y.flatConfigs['recommended'], // https://github.com/jsx-eslint/eslint-plugin-jsx-a11y
   comments['recommended'], // https://mysticatea.github.io/eslint-plugin-eslint-comments/
   // typescript
-  typescript.configs['strictTypeChecked'], // https://typescript-eslint.io/getting-started
-  typescript.configs['stylisticTypeChecked'],
+  typescriptPlugin.configs['strictTypeChecked'], // https://typescript-eslint.io/getting-started
+  typescriptPlugin.configs['stylisticTypeChecked'],
   // styling
   stylistic.configs.customize({
     semi: true, // https://eslint.style/packages/default
