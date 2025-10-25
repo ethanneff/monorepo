@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "react-native": "0.81.4"
+    "react-native": "0.81.5"
   },
   "devDependencies": {
     "@tooling/eslint": "workspace:*",

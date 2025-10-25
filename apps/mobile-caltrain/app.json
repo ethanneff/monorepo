@@ -21,7 +21,8 @@
           "backgroundColor": "#ffffff",
           "image": "src/assets/images/splash-icon.png"
         }
-      ]
+      ],
+      "expo-web-browser"
     ],
     "scheme": "mobile-caltrain",
     "slug": "mobile-caltrain",
