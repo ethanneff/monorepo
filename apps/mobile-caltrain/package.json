@@ -51,6 +51,8 @@
   "private": true,
   "scripts": {
     "android": "expo start --android",
+    "build": "expo export --platform web",
+    "dev": "expo start --clear",
     "ios": "expo start --ios",
     "lint": "./../../tooling/scripts/lint.sh",
     "start": "expo start",
