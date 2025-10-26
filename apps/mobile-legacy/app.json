@@ -10,7 +10,7 @@
     "ios": {
       "supportsTablet": true
     },
-    "name": "mobile-learn",
+    "name": "mobile-legacy",
     "newArchEnabled": true,
     "orientation": "portrait",
     "plugins": [
@@ -23,8 +23,8 @@
         }
       ]
     ],
-    "scheme": "mobile-learn",
-    "slug": "mobile-learn",
+    "scheme": "mobile-legacy",
+    "slug": "mobile-legacy",
     "userInterfaceStyle": "automatic",
     "version": "1.0.0",
     "web": {

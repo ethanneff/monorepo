@@ -10,7 +10,7 @@
     "ios": {
       "supportsTablet": true
     },
-    "name": "mobile-caltrain",
+    "name": "mobile-learn",
     "newArchEnabled": true,
     "orientation": "portrait",
     "plugins": [
@@ -23,8 +23,8 @@
         }
       ]
     ],
-    "scheme": "mobile-caltrain",
-    "slug": "mobile-caltrain",
+    "scheme": "mobile-learn",
+    "slug": "mobile-learn",
     "userInterfaceStyle": "automatic",
     "version": "1.0.0",
     "web": {

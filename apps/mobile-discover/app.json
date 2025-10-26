@@ -10,7 +10,7 @@
     "ios": {
       "supportsTablet": true
     },
-    "name": "mobile-caltrain",
+    "name": "mobile-discover",
     "newArchEnabled": true,
     "orientation": "portrait",
     "plugins": [
