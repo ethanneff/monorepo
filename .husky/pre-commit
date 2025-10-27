@@ -5,12 +5,5 @@ if [ "$CI" = "true" ]; then
   exit 0
 fi
 
-# Run turbo lint and test, then format
-echo "Running lint and test..."
-turbo run lint test --parallel || exit 1
-
-echo "Running format..."
-./tooling/scripts/format.sh || exit 1
-
 # remove empty directories that are not tracked by git
 find . -type d -empty -delete

@@ -1,0 +1,14 @@
+echo "Running pre-push hook..."
+
+if [ "$CI" = "true" ]; then
+  echo "CI environment detected. Skipping pre-push hooks."
+  exit 0
+fi
+
+# Run turbo lint and test, then format
+echo "Running lint and test..."
+turbo run lint test --parallel || exit 1
+
+echo "Running format..."
+./tooling/scripts/format.sh || exit 1
+
