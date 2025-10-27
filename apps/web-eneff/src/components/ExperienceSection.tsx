@@ -1,4 +1,4 @@
-import { JobCard } from './JobCard';
+import { ExperienceCard } from '@/src/components/ExperienceCard';
 
 type ExperienceSectionProperties = {
   readonly onRefSet: (element: HTMLElement | null) => void;
@@ -15,11 +15,11 @@ type Job = {
 const jobs: Job[] = [
   {
     achievements: [
-      'Led and launched a new React Native app for doctors',
-      'Migrated 4 web and mobile codebases into a single monorepo',
-      'Led cross-team platform upgrades including CI/CD, testing harnesses, and performance optimizations',
-      'Led and built product features including a mobile storefront, AI chatbot, and recommendation engine',
-      'Empowered engineers and set multi-year architecture vision across the organization',
+      'Led and launched a new React Native app for providers',
+      'Migrated 4 web and mobile codebases into a single monorepo for code reusability across teams',
+      'Led cross-team platform upgrades including feature flagging, CI/CD, testing harnesses, and performance optimizations',
+      'Launched product features including a mobile storefront, AI chatbot, and recommendation engine',
+      'Empowered engineers and set multiyear architecture vision across the organization',
     ],
     company: 'Alto',
     role: 'Staff Software Engineer',
@@ -29,13 +29,13 @@ const jobs: Job[] = [
   {
     achievements: [
       'First React Native hire - transformed the original Android app to a cross-platform app',
-      'Built and scaled the initial app infrastructure from 3 engineers to 50',
-      'Led and developed dozens of features including the bluetooth sensor engine',
-      'Led platform initiatives including release flow, quality control, and engineering excellence',
+      'Built and scaled the app infrastructure from 3 engineers to 50+',
+      'Led and developed dozens of features including the bluetooth sensor engine, gamification, notifications, and group chat',
+      'Led platform initiatives including observability, release flow, quality control, and engineering excellence',
     ],
     company: 'Hinge Health',
-    role: 'Tech Lead',
-    tech: ['React Native', 'Redux', 'GraphQL', 'Bluetooth', 'CI/CD', 'Agile'],
+    role: 'Mobile Tech Lead',
+    tech: ['React Native', 'Redux', 'GraphQL', 'BLE', 'CI/CD', 'Agile'],
     year: '2018',
   },
   {
@@ -57,8 +57,28 @@ const jobs: Job[] = [
     ],
     company: 'BetterHelp',
     role: 'Lead Mobile Developer',
-    tech: ['Ionic', 'Cordova', 'PHP', 'AWS S3'],
+    tech: ['Ionic', 'Cordova', 'PHP', 'AWS'],
     year: '2015',
+  },
+  {
+    achievements: [
+      'Built Organize - a iOS productivity app to help users manage their goals, tasks, and projects within Evernote',
+      'Built Interval Tracker - a iOS app to help users track their interval training sessions',
+      'Built Drag and Drop - a performant Swift library to drag, drop, and gesture nested list items',
+    ],
+    company: 'Self Employed',
+    role: 'Solo Developer',
+    tech: ['Objective C', 'Swift', 'Node'],
+    year: '2013',
+  },
+  {
+    achievements: [
+      'Dual Major in Management Information Systems and Computer Science - 3.7 GPA',
+    ],
+    company: 'University of Texas, Austin',
+    role: 'Student',
+    tech: ['C#', 'Python', 'Java', 'SQL'],
+    year: '2013',
   },
 ];
 
@@ -75,13 +95,13 @@ export const ExperienceSection = ({
         <div className="flex flex-row justify-between items-center gap-4">
           <h2 className="text-3xl sm:text-4xl font-light">Experience</h2>
           <div className="text-sm text-muted-foreground font-mono">
-            2012 — {new Date().getFullYear()}
+            {new Date().getFullYear() - 2012} years
           </div>
         </div>
 
         <div className="space-y-8 sm:space-y-12">
           {jobs.map((job) => (
-            <JobCard
+            <ExperienceCard
               achievements={job.achievements}
               company={job.company}
               key={job.company}
