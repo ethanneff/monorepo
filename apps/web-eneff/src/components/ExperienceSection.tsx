@@ -7,6 +7,7 @@ type ExperienceSectionProperties = {
 type Job = {
   achievements: string[];
   company: string;
+  location: string;
   role: string;
   tech: string[];
   year: string;
@@ -21,9 +22,18 @@ const jobs: Job[] = [
       'Launched product features including a mobile storefront, AI chatbot, and recommendation engine',
       'Empowered engineers and set multiyear architecture vision across the organization',
     ],
-    company: 'Alto',
+    company: 'Alto Pharmacy',
+    location: 'San Francisco, CA',
     role: 'Staff Software Engineer',
-    tech: ['React Native', 'NextJS', 'MonoRepo', 'CI/CD', 'DDD', 'Lean'],
+    tech: [
+      'React Native',
+      'NextJS',
+      'MonoRepo',
+      'CI/CD',
+      'DDD',
+      'DORA',
+      'Lean',
+    ],
     year: '2020',
   },
   {
@@ -34,6 +44,7 @@ const jobs: Job[] = [
       'Led platform initiatives including observability, release flow, quality control, and engineering excellence',
     ],
     company: 'Hinge Health',
+    location: 'San Francisco, CA',
     role: 'Mobile Tech Lead',
     tech: ['React Native', 'Redux', 'GraphQL', 'BLE', 'CI/CD', 'Agile'],
     year: '2018',
@@ -45,6 +56,7 @@ const jobs: Job[] = [
       'Contributed long tail support for hundreds of clients',
     ],
     company: 'Branch',
+    location: 'Palo Alto, CA',
     role: 'Senior Software Engineer',
     tech: ['React Native', 'Cordova', 'PhoneGap', 'Ionic', 'Java', 'Node'],
     year: '2016',
@@ -56,6 +68,7 @@ const jobs: Job[] = [
       'Created the design system and component library to standardize the web and mobile codebases',
     ],
     company: 'BetterHelp',
+    location: 'Sunnyvale, CA',
     role: 'Lead Mobile Developer',
     tech: ['Ionic', 'Cordova', 'PHP', 'AWS'],
     year: '2015',
@@ -67,8 +80,9 @@ const jobs: Job[] = [
       'Built Drag and Drop - a performant Swift library to drag, drop, and gesture nested list items',
     ],
     company: 'Self Employed',
+    location: 'Austin, TX',
     role: 'Solo Developer',
-    tech: ['Objective C', 'Swift', 'Node'],
+    tech: ['Objective C', 'Swift', 'Node', 'Git'],
     year: '2013',
   },
   {
@@ -76,6 +90,7 @@ const jobs: Job[] = [
       'Dual Major in Management Information Systems and Computer Science - 3.7 GPA',
     ],
     company: 'University of Texas, Austin',
+    location: 'Austin, TX',
     role: 'Student',
     tech: ['C#', 'Python', 'Java', 'SQL'],
     year: '2013',
