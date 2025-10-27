@@ -2,7 +2,7 @@ import { useCallback, useState } from 'react';
 import { ThemeToggle } from './ThemeToggle';
 
 export const Footer = () => {
-  const [isDark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useState(true);
 
   const toggleTheme = useCallback(() => {
     setIsDark((previousIsDark) => {
