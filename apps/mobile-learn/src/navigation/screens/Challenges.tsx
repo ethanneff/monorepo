@@ -8,7 +8,7 @@ export const ChallengesScreen = () => {
       justifyContent="center"
     >
       <Text title="Challenges Screen" />
-      <Text subtitle="This is where challenges will be displayed" />
+      <Text title="This is where challenges will be displayed" />
     </View>
   );
 };

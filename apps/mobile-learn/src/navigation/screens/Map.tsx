@@ -8,7 +8,7 @@ export const MapScreen = () => {
       justifyContent="center"
     >
       <Text title="Map Screen" />
-      <Text subtitle="This is where the map will be displayed" />
+      <Text title="This is where the map will be displayed" />
     </View>
   );
 };

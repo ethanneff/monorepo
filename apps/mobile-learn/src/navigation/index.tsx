@@ -1,7 +1,9 @@
+/* eslint-disable perfectionist/sort-imports */
 import { ChallengesScreen } from '@/navigation/screens/Challenges';
 import { MapScreen } from '@/navigation/screens/Map';
 import { ProfileScreen } from '@/navigation/screens/Profile';
 import { SocialScreen } from '@/navigation/screens/Social';
+// eslint-disable-next-line no-restricted-imports
 import { Ionicons } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStaticNavigation } from '@react-navigation/native';
@@ -54,3 +56,5 @@ const TabNavigator = createBottomTabNavigator({
 });
 
 export const Navigation = createStaticNavigation(TabNavigator);
+
+/* eslint-enable perfectionist/sort-imports */

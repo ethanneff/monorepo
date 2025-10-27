@@ -8,7 +8,7 @@ export const SocialScreen = () => {
       justifyContent="center"
     >
       <Text title="Social Screen" />
-      <Text subtitle="This is where social features will be displayed" />
+      <Text title="This is where social features will be displayed" />
     </View>
   );
 };
