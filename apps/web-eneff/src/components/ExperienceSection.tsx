@@ -15,11 +15,11 @@ type Job = {
 const jobs: Job[] = [
   {
     achievements: [
-      'Led and launched a new React Native app for providers',
-      'Migrated 4 web and mobile codebases into a single monorepo for code reusability across teams',
-      'Led cross-team platform upgrades including feature flagging, CI/CD, testing harnesses, and performance optimizations',
-      'Launched product features including a mobile storefront, AI chatbot, and recommendation engine',
-      'Empowered engineers and set multiyear architecture vision across the organization',
+      'Led and launched a new React Native provider app, while establishing mobile foundations across the organization.',
+      'Consolidated 4 web/mobile codebases into a single monorepo, reducing duplicated code and accelerating cross-team reuse.',
+      'Drove platform upgrades including feature flags, CI/CD, test harnesses, and perf work, cutting build times and flaky tests.',
+      'Shipped product initiatives including a mobile storefront, AI chatbot, and a recommendation engine.',
+      'Set multi-year architecture vision and mentored engineers across org, unblocking roadmap delivery.',
     ],
     company: 'Alto',
     role: 'Staff Software Engineer',
@@ -28,10 +28,10 @@ const jobs: Job[] = [
   },
   {
     achievements: [
-      'First React Native hire - transformed the original Android app to a cross-platform app',
-      'Built and scaled the app infrastructure from 3 engineers to 50+',
-      'Led and developed dozens of features including the bluetooth sensor engine, gamification, notifications, and group chat',
-      'Led platform initiatives including observability, release flow, quality control, and engineering excellence',
+      'First React Native hire; transformed a native Android app into a cross-platform app used by millions of users.',
+      'Scaled mobile infra from 3 to 50+ engineers with reliable tooling, standards, and modular architecture.',
+      'Built core features including the Bluetooth sensor engine, gamification, notifications, and group chat.',
+      'Led platform initiatives for observability, release flow, quality gates, and engineering excellence.',
     ],
     company: 'Hinge Health',
     role: 'Mobile Tech Lead',
@@ -40,9 +40,9 @@ const jobs: Job[] = [
   },
   {
     achievements: [
-      'Rebuilt and maintained the Cordova and React Native SDKs',
-      'Managed platform upgrades across hundreds of servers and billions of requests',
-      'Contributed long tail support for hundreds of clients',
+      'Rebuilt and maintained Cordova and React Native SDKs used by hundreds of apps.',
+      'Coordinated platform upgrades across hundreds of servers handling billions of requests.',
+      'Provided long-tail support for hundreds of clients, reducing integration time to hours.',
     ],
     company: 'Branch',
     role: 'Senior Software Engineer',
@@ -51,9 +51,9 @@ const jobs: Job[] = [
   },
   {
     achievements: [
-      'First engineering hire - built the Ionic/Cordova mobile app and API from scratch',
-      'Created the LEMP dev environment with Vagrant to streamline and scale the engineering team',
-      'Created the design system and component library to standardize the web and mobile codebases',
+      'First engineering hire; built the Ionic/Cordova mobile app and REST API from scratch to first revenue.',
+      'Created a LEMP dev environment with Vagrant, cutting onboarding time and standardizing builds.',
+      'Designed a component library/design system to unify web and mobile, speeding feature delivery.',
     ],
     company: 'BetterHelp',
     role: 'Lead Mobile Developer',
@@ -62,9 +62,9 @@ const jobs: Job[] = [
   },
   {
     achievements: [
-      'Built Organize - a iOS productivity app to help users manage their goals, tasks, and projects within Evernote',
-      'Built Interval Tracker - a iOS app to help users track their interval training sessions',
-      'Built Drag and Drop - a performant Swift library to drag, drop, and gesture nested list items',
+      'Built Organize — an iOS productivity app that managed goals/tasks/projects/notes within Evernote.',
+      'Built Interval Tracker — an iOS app for interval training with custom timers and analytics.',
+      'Published Drag and Drop — a performant Swift library for reordering nested list items with gestures.',
     ],
     company: 'Self Employed',
     role: 'Solo Developer',
@@ -73,7 +73,7 @@ const jobs: Job[] = [
   },
   {
     achievements: [
-      'Dual Major in Management Information Systems and Computer Science - 3.7 GPA',
+      'Dual major in Management Information Systems and Computer Science; GPA 3.7.',
     ],
     company: 'University of Texas, Austin',
     role: 'Student',
