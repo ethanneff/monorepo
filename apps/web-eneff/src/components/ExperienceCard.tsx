@@ -16,14 +16,14 @@ export const ExperienceCard = ({
   year,
 }: Properties) => {
   return (
-    <div className="group grid lg:grid-cols-12 gap-4 sm:gap-8 py-6 sm:py-8 border-b border-border/50 hover:border-border transition-colors duration-500">
+    <div className="group grid lg:grid-cols-16 gap-4 sm:gap-8 py-6 sm:py-8 border-b border-border/50 hover:border-border transition-colors duration-500">
       <div className="lg:col-span-2">
         <div className="text-xl sm:text-2xl font-light text-muted-foreground group-hover:text-foreground transition-colors duration-300">
           {year}
         </div>
       </div>
 
-      <div className="lg:col-span-7 space-y-3">
+      <div className="lg:col-span-10 space-y-3">
         <div>
           <h3 className="text-lg sm:text-xl font-medium">{role}</h3>
           <div className="text-muted-foreground">{company}</div>
@@ -40,7 +40,7 @@ export const ExperienceCard = ({
           ))}
         </ul>
       </div>
-      <div className="lg:col-span-3 flex flex-wrap gap-2 justify-start lg:justify-end items-start content-start">
+      <div className="lg:col-span-4 flex flex-wrap gap-2 justify-start lg:justify-end items-start content-start">
         {tech.map((item) => (
           <Pill
             key={item}
