@@ -1,3 +1,5 @@
+import { Pill } from '@/src/components/Pill';
+
 type HeaderProperties = {
   readonly onRefSet: (element: HTMLElement | null) => void;
 };
@@ -57,12 +59,10 @@ export const Header = ({ onRefSet }: HeaderProperties) => {
             <div className="text-sm text-muted-foreground font-mono">FOCUS</div>
             <div className="flex flex-wrap gap-2">
               {skills.map((skill) => (
-                <span
-                  className="px-3 py-1 text-xs border border-border rounded-full hover:border-muted-foreground/50 transition-colors duration-300"
+                <Pill
                   key={skill}
-                >
-                  {skill}
-                </span>
+                  title={skill}
+                />
               ))}
             </div>
           </div>
