@@ -1,10 +1,6 @@
 import { ExperienceCard } from '@/src/components/ExperienceCard';
 
-type ExperienceSectionProperties = {
-  readonly onRefSet: (element: HTMLElement | null) => void;
-};
-
-type Job = {
+type Experience = {
   achievements: string[];
   company: string;
   location: string;
@@ -13,22 +9,25 @@ type Job = {
   year: string;
 };
 
-const jobs: Job[] = [
+type ExperienceSectionProperties = {
+  readonly onRefSet: (element: HTMLElement | null) => void;
+};
+const experiences: Experience[] = [
   {
     achievements: [
-      'Led and launched a new React Native app for providers',
-      'Migrated 4 web and mobile codebases into a single monorepo for code reusability across teams',
-      'Led cross-team platform upgrades including feature flagging, CI/CD, testing harnesses, and performance optimizations',
-      'Launched product features including a mobile storefront, AI chatbot, and recommendation engine',
-      'Empowered engineers and set multiyear architecture vision across the organization',
+      'Led and launched a new React Native app for providers.',
+      'Migrated four web and mobile codebases into a single monorepo to improve code reusability across teams.',
+      'Led cross-team platform upgrades, including feature flagging, CI/CD, testing harnesses, and performance optimizations.',
+      'Launched major product features, such as a mobile storefront, AI chatbot, and recommendation engine.',
+      'Empowered engineers and established a multi-year architectural vision across the organization.',
     ],
     company: 'Alto Pharmacy',
     location: 'San Francisco, CA',
     role: 'Staff Software Engineer',
     tech: [
       'React Native',
-      'NextJS',
-      'MonoRepo',
+      'Next.js',
+      'Monorepo',
       'CI/CD',
       'DDD',
       'DORA',
@@ -38,10 +37,10 @@ const jobs: Job[] = [
   },
   {
     achievements: [
-      'First React Native hire - transformed the original Android app to a cross-platform app',
-      'Built and scaled the app infrastructure from 3 engineers to 50+',
-      'Led and developed dozens of features including the bluetooth sensor engine, gamification, notifications, and group chat',
-      'Led platform initiatives including observability, release flow, quality control, and engineering excellence',
+      'Served as the first React Native hire and transformed the original Android app into a cross-platform application.',
+      'Built and scaled the app infrastructure from three engineers to more than fifty.',
+      'Led the development of dozens of features, including the Bluetooth sensor engine, gamification, notifications, and group chat.',
+      'Directed platform initiatives focused on observability, release flow, quality control, and engineering excellence.',
     ],
     company: 'Hinge Health',
     location: 'San Francisco, CA',
@@ -51,21 +50,21 @@ const jobs: Job[] = [
   },
   {
     achievements: [
-      'Rebuilt and maintained the Cordova and React Native SDKs',
-      'Managed platform upgrades across hundreds of servers and billions of requests',
-      'Contributed long tail support for hundreds of clients',
+      'Rebuilt and maintained the Cordova and React Native SDKs.',
+      'Managed platform upgrades across hundreds of servers handling billions of requests.',
+      'Provided long-tail support for hundreds of clients, improving integration stability and response times.',
     ],
     company: 'Branch',
     location: 'Palo Alto, CA',
     role: 'Senior Software Engineer',
-    tech: ['React Native', 'Cordova', 'PhoneGap', 'Ionic', 'Java', 'Node'],
+    tech: ['React Native', 'Cordova', 'PhoneGap', 'Ionic', 'Java', 'Node.js'],
     year: '2016',
   },
   {
     achievements: [
-      'First engineering hire - built the Ionic/Cordova mobile app and API from scratch',
-      'Created the LEMP dev environment with Vagrant to streamline and scale the engineering team',
-      'Created the design system and component library to standardize the web and mobile codebases',
+      'Joined as the first engineering hire and built the Ionic/Cordova mobile app and API from scratch.',
+      'Developed a LEMP development environment using Vagrant to streamline workflows and scale the engineering team.',
+      'Created a design system and component library to standardize the web and mobile codebases.',
     ],
     company: 'BetterHelp',
     location: 'Sunnyvale, CA',
@@ -75,19 +74,19 @@ const jobs: Job[] = [
   },
   {
     achievements: [
-      'Built Organize - a iOS productivity app to help users manage their goals, tasks, and projects within Evernote',
-      'Built Interval Tracker - a iOS app to help users track their interval training sessions',
-      'Built Drag and Drop - a performant Swift library to drag, drop, and gesture nested list items',
+      'Built Organize — an iOS productivity app that helps users manage goals, tasks, and projects within Evernote.',
+      'Built Interval Tracker — an iOS app that helps users track their interval training sessions.',
+      'Built Drag and Drop — a high-performance Swift library enabling drag, drop, and gesture support for nested list items.',
     ],
     company: 'Self Employed',
     location: 'Austin, TX',
     role: 'Solo Developer',
-    tech: ['Objective C', 'Swift', 'Node', 'Git'],
+    tech: ['Objective-C', 'Swift', 'Node.js', 'Git'],
     year: '2013',
   },
   {
     achievements: [
-      'Dual Major in Management Information Systems and Computer Science - 3.7 GPA',
+      'Graduated with dual majors in Management Information Systems and Computer Science (GPA: 3.7).',
     ],
     company: 'University of Texas, Austin',
     location: 'Austin, TX',
@@ -115,14 +114,14 @@ export const ExperienceSection = ({
         </div>
 
         <div className="space-y-8 sm:space-y-12">
-          {jobs.map((job) => (
+          {experiences.map(({ achievements, company, role, tech, year }) => (
             <ExperienceCard
-              achievements={job.achievements}
-              company={job.company}
-              key={job.company}
-              role={job.role}
-              tech={job.tech}
-              year={job.year}
+              achievements={achievements}
+              company={company}
+              key={company}
+              role={role}
+              tech={tech}
+              year={year}
             />
           ))}
         </div>
