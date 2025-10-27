@@ -1,6 +1,6 @@
+import { colors } from '@/constants/colors';
 import { Icon, Text, TouchableOpacity, View } from '@shared/components';
 import { LinearGradient } from 'expo-linear-gradient';
-import { colors } from '@/constants/colors';
 
 type ItemProperties = {
   readonly red?: boolean;
@@ -33,8 +33,10 @@ export const ListItem = ({ red, title }: ItemProperties) => {
           />
         </View>
         <LinearGradient
-          colors={[colors.lightGray, colors.lightGray]}
-          style={{ height: 0.5, width: '100%' }}
+          colors={[colors.white, colors.lightGray]}
+          end={{ x: 1, y: 0 }}
+          start={{ x: 0, y: 0 }}
+          style={{ height: 1, width: '100%' }}
         />
       </View>
     </TouchableOpacity>
