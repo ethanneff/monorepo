@@ -5,8 +5,8 @@ type ExperienceSectionProperties = {
 };
 
 type Job = {
+  achievements: string[];
   company: string;
-  description: string;
   role: string;
   tech: string[];
   year: string;
@@ -14,33 +14,48 @@ type Job = {
 
 const jobs: Job[] = [
   {
+    achievements: [
+      'Led and launched a new React Native app for doctors',
+      'Migrated 4 web and mobile codebases into a single monorepo',
+      'Led cross-team platform upgrades including CI/CD, testing harnesses, and performance optimizations',
+      'Led and built product features including a mobile storefront, AI chatbot, and recommendation engine',
+      'Empowered engineers and set multi-year architecture vision across the organization',
+    ],
     company: 'Alto',
-    description:
-      'Led and launched a new React Native app for providers, migrated 4 web and mobile codebases into a single monorepo, and led cross-team platform upgrades. Empowered engineers while managing architecture vision across the organization.',
     role: 'Staff Software Engineer',
-    tech: ['React Native', 'TypeScript', 'CI/CD', 'DDD'],
+    tech: ['React Native', 'NextJS', 'MonoRepo', 'CI/CD', 'DDD', 'Lean'],
     year: '2020',
   },
   {
+    achievements: [
+      'First React Native hire - transformed the original Android app to a cross-platform app',
+      'Built and scaled the initial app infrastructure from 3 engineers to 50',
+      'Led and developed dozens of features including the bluetooth sensor engine',
+      'Led platform initiatives including release flow, quality control, and engineering excellence',
+    ],
     company: 'Hinge Health',
-    description:
-      'Led a team of 8 while scaling the mobile organization from 3 to 20 engineers. Built the initial app infrastructure and created the sensor engine to render hundreds of SVG pose animations.',
     role: 'Tech Lead',
-    tech: ['React Native', 'Redux', 'Apollo', 'GraphQL'],
+    tech: ['React Native', 'Redux', 'GraphQL', 'Bluetooth', 'CI/CD', 'Agile'],
     year: '2018',
   },
   {
+    achievements: [
+      'Rebuilt and maintained the Cordova and React Native SDKs',
+      'Managed platform upgrades across hundreds of servers and billions of requests',
+      'Contributed long tail support for hundreds of clients',
+    ],
     company: 'Branch',
-    description:
-      'Led the link service team to ship features, scale infrastructure, and maintain server requests. Rebuilt and maintained the Cordova and React Native SDKs.',
     role: 'Senior Software Engineer',
-    tech: ['React', 'Redux', 'Java', 'Node'],
+    tech: ['React Native', 'Cordova', 'PhoneGap', 'Ionic', 'Java', 'Node'],
     year: '2016',
   },
   {
+    achievements: [
+      'First engineering hire - built the Ionic/Cordova mobile app and API from scratch',
+      'Created the LEMP dev environment with Vagrant to streamline and scale the engineering team',
+      'Created the design system and component library to standardize the web and mobile codebases',
+    ],
     company: 'BetterHelp',
-    description:
-      'Created the mobile app with Ionic/Cordova to increase new ad channel revenue by 24%. Created the REST API with PHP and the LEMP dev environment with Vagrant.',
     role: 'Lead Mobile Developer',
     tech: ['Ionic', 'Cordova', 'PHP', 'AWS S3'],
     year: '2015',
@@ -67,8 +82,8 @@ export const ExperienceSection = ({
         <div className="space-y-8 sm:space-y-12">
           {jobs.map((job) => (
             <JobCard
+              achievements={job.achievements}
               company={job.company}
-              description={job.description}
               key={job.company}
               role={job.role}
               tech={job.tech}
