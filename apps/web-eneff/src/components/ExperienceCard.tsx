@@ -40,7 +40,7 @@ export const ExperienceCard = ({
           ))}
         </ul>
       </div>
-      <div className="lg:col-span-3 flex flex-wrap lg:flex-col gap-2 items-end">
+      <div className="lg:col-span-3 flex flex-wrap gap-2 justify-start lg:justify-end items-start content-start">
         {tech.map((item) => (
           <Pill
             key={item}
