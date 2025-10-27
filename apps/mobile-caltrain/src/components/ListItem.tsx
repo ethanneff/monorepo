@@ -1,6 +1,6 @@
-import { colors } from '@/constants/colors';
 import { Icon, Text, TouchableOpacity, View } from '@shared/components';
 import { LinearGradient } from 'expo-linear-gradient';
+import { colors } from '@/constants/colors';
 
 type ItemProperties = {
   readonly red?: boolean;
