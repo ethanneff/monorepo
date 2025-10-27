@@ -1,6 +1,12 @@
 // Learn more: https://github.com/testing-library/jest-dom
 import '@testing-library/jest-dom';
 
+jest.mock('@expo/vector-icons/Entypo', () => ({
+  __esModule: true,
+  default: 'Entypo',
+  glyphMap: {},
+}));
+
 // Set Jest timeout to prevent hanging
 jest.setTimeout(5000);
 
