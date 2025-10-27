@@ -1,17 +1,13 @@
 import { describe, expect, it } from '@jest/globals';
 import { render, screen } from '@testing-library/react-native';
-import { HomeScreen } from '../Home';
+import { AccountScreen } from '../Account';
 
 describe('homeScreen', () => {
   it('should render', () => {
     expect.assertions(1);
 
-    render(<HomeScreen />);
+    render(<AccountScreen />);
 
-    expect(
-      screen.getByText(
-        'Edit src/navigation/screens/Home.tsx to edit this screen.',
-      ),
-    ).toBeTruthy();
+    expect(screen.getByText('Security Settings')).toBeTruthy();
   });
 });
