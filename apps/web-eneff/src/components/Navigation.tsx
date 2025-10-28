@@ -25,12 +25,12 @@ export const Navigation = ({
   );
 
   return (
-    <nav className="fixed left-8 top-1/2 -translate-y-1/2 z-10 max-lg:hidden">
+    <nav className="fixed top-1/2 left-8 z-10 -translate-y-1/2 max-lg:hidden">
       <div className="flex flex-col gap-4">
         {sections.map((section) => (
           <button
             aria-label={`Navigate to ${section}`}
-            className={`w-2 h-8 rounded-full transition-all duration-500 ${
+            className={`h-8 w-2 rounded-full transition-all duration-500 ${
               activeSection === section
                 ? 'bg-foreground'
                 : 'bg-muted-foreground/30 hover:bg-muted-foreground/60'

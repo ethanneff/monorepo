@@ -1,5 +1,5 @@
 {
   "extends": "@tooling/tsconfig/react-native",
   "compilerOptions": { "paths": { "@/*": ["./src/*"] } },
-  "include": ["**/*.ts", "**/*.tsx"]
+  "include": ["**/*.ts", "**/*.tsx", "nativewind-env.d.ts"]
 }

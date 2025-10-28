@@ -12,10 +12,11 @@
   },
   "devDependencies": {
     "husky": "9.1.7",
-    "knip": "5.66.2",
+    "knip": "5.66.3",
     "madge": "8.0.0",
     "only-allow": "1.2.1",
     "prettier": "3.6.2",
+    "prettier-plugin-tailwindcss": "0.7.1",
     "shellcheck": "4.1.0",
     "sherif": "1.7.0",
     "turbo": "2.5.8"
@@ -23,7 +24,12 @@
   "packageManager": "pnpm@10.19.0",
   "name": "@shared/monorepo",
   "engines": {
-    "node": "22",
+    "node": "24",
     "pnpm": "10.19.0"
+  },
+  "pnpm": {
+    "overrides": {
+      "lightningcss": "1.30.1"
+    }
   }
 }

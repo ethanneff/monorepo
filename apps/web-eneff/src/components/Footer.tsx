@@ -12,10 +12,10 @@ export const Footer = () => {
   }, []);
 
   return (
-    <footer className="py-12 sm:py-16 border-t border-border">
-      <div className="flex flex-row justify-between items-start items-center gap-6 sm:gap-8">
+    <footer className="border-border border-t py-12 sm:py-16">
+      <div className="flex flex-row items-center items-start justify-between gap-6 sm:gap-8">
         <div className="space-y-2">
-          <div className="text-sm text-muted-foreground">
+          <div className="text-muted-foreground text-sm">
             © {new Date().getFullYear()} Ethan Neff. All rights reserved.
           </div>
         </div>

@@ -7,13 +7,13 @@ export const ThemeToggle = ({ isDark, onToggle }: ThemeToggleProperties) => {
   return (
     <button
       aria-label="Toggle theme"
-      className="group p-3 rounded-lg border border-border hover:border-muted-foreground/50 transition-all duration-300"
+      className="group border-border hover:border-muted-foreground/50 rounded-lg border p-3 transition-all duration-300"
       onClick={onToggle}
       type="button"
     >
       {isDark ? (
         <svg
-          className="w-4 h-4 text-muted-foreground group-hover:text-foreground transition-colors duration-300"
+          className="text-muted-foreground group-hover:text-foreground h-4 w-4 transition-colors duration-300"
           fill="currentColor"
           viewBox="0 0 20 20"
         >
@@ -25,7 +25,7 @@ export const ThemeToggle = ({ isDark, onToggle }: ThemeToggleProperties) => {
         </svg>
       ) : (
         <svg
-          className="w-4 h-4 text-muted-foreground group-hover:text-foreground transition-colors duration-300"
+          className="text-muted-foreground group-hover:text-foreground h-4 w-4 transition-colors duration-300"
           fill="currentColor"
           viewBox="0 0 20 20"
         >

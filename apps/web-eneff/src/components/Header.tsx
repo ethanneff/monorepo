@@ -9,31 +9,31 @@ export const Header = ({ onRefSet }: HeaderProperties) => {
 
   return (
     <header
-      className="min-h-screen flex items-center opacity-0"
+      className="flex min-h-screen items-center opacity-0"
       id="intro"
       ref={onRefSet}
     >
-      <div className="grid lg:grid-cols-5 gap-2 sm:gap-16 w-full">
-        <div className="lg:col-span-3 space-y-6 sm:space-y-8">
+      <div className="grid w-full gap-2 sm:gap-16 lg:grid-cols-5">
+        <div className="space-y-6 sm:space-y-8 lg:col-span-3">
           <div className="space-y-3 sm:space-y-2">
-            <div className="text-sm text-muted-foreground font-mono tracking-wider">
+            <div className="text-muted-foreground font-mono text-sm tracking-wider">
               PORTFOLIO / {new Date().getFullYear()}
             </div>
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-light tracking-tight">
+            <h1 className="text-5xl font-light tracking-tight sm:text-6xl lg:text-7xl">
               Ethan Neff
             </h1>
           </div>
 
-          <div className="space-y-6 max-w-md">
-            <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed text-foreground">
+          <div className="max-w-md space-y-6">
+            <p className="text-muted-foreground text-foreground text-lg leading-relaxed sm:text-xl">
               Tech Lead with expertise in scaling mobile systems, building
               high-performing teams, and driving cross-functional strategic
               vision.
             </p>
 
-            <div className="flex flex-row gap-6 text-sm text-muted-foreground">
+            <div className="text-muted-foreground flex flex-row gap-6 text-sm">
               <div className="flex items-center gap-2">
-                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+                <div className="h-2 w-2 animate-pulse rounded-full bg-green-500" />
                 Available for work
               </div>
               <div>Sunnyvale, CA</div>
@@ -41,22 +41,22 @@ export const Header = ({ onRefSet }: HeaderProperties) => {
           </div>
         </div>
 
-        <div className="lg:col-span-2 flex flex-col justify-end space-y-6 sm:space-y-8 mt-8 lg:mt-0">
+        <div className="mt-8 flex flex-col justify-end space-y-6 sm:space-y-8 lg:col-span-2 lg:mt-0">
           <div className="space-y-4">
-            <div className="text-sm text-muted-foreground font-mono">
+            <div className="text-muted-foreground font-mono text-sm">
               CURRENTLY
             </div>
             <div className="space-y-2">
               <div className="text-foreground">Staff Software Engineer</div>
               <div className="text-muted-foreground">@ Alto</div>
-              <div className="text-xs text-muted-foreground">
+              <div className="text-muted-foreground text-xs">
                 2020 — Present
               </div>
             </div>
           </div>
 
           <div className="space-y-4">
-            <div className="text-sm text-muted-foreground font-mono">FOCUS</div>
+            <div className="text-muted-foreground font-mono text-sm">FOCUS</div>
             <div className="flex flex-wrap gap-2">
               {skills.map((skill) => (
                 <Pill
