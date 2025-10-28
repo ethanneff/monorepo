@@ -184,14 +184,14 @@ const BubblePhysics = () => {
   }, []);
 
   return (
-    <main className="relative w-full h-screen overflow-hidden">
+    <main className="relative h-screen w-full overflow-hidden">
       <canvas
-        className="block w-full h-full cursor-pointer"
+        className="block h-full w-full cursor-pointer"
         onClick={onClick}
         ref={canvasReference}
       />
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <p className="text-2xl font-sans text-foreground/30 animate-pulse">
+      <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+        <p className="text-foreground/30 animate-pulse font-sans text-2xl">
           click the circles
         </p>
       </div>

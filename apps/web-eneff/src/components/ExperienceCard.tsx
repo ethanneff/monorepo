@@ -16,22 +16,22 @@ export const ExperienceCard = ({
   year,
 }: Properties) => {
   return (
-    <div className="group grid lg:grid-cols-16 gap-4 sm:gap-8 py-6 sm:py-8 border-b border-border/50 hover:border-border transition-colors duration-500">
+    <div className="group border-border/50 hover:border-border grid gap-4 border-b py-6 transition-colors duration-500 sm:gap-8 sm:py-8 lg:grid-cols-16">
       <div className="lg:col-span-2">
-        <div className="text-xl sm:text-2xl font-light text-muted-foreground group-hover:text-foreground transition-colors duration-300">
+        <div className="text-muted-foreground group-hover:text-foreground text-xl font-light transition-colors duration-300 sm:text-2xl">
           {year}
         </div>
       </div>
 
-      <div className="lg:col-span-10 space-y-3">
+      <div className="space-y-3 lg:col-span-10">
         <div>
-          <h3 className="text-lg sm:text-xl font-medium">{role}</h3>
+          <h3 className="text-lg font-medium sm:text-xl">{role}</h3>
           <div className="text-muted-foreground">{company}</div>
         </div>
-        <ul className="text-sm text-muted-foreground leading-relaxed max-w-lg space-y-2.5">
+        <ul className="text-muted-foreground max-w-lg space-y-2.5 text-sm leading-relaxed">
           {achievements.map((achievement) => (
             <li
-              className="flex gap-2 group/item hover:text-foreground transition-colors duration-300"
+              className="group/item hover:text-foreground flex gap-2 transition-colors duration-300"
               key={achievement}
             >
               <span>•</span>
@@ -40,7 +40,7 @@ export const ExperienceCard = ({
           ))}
         </ul>
       </div>
-      <div className="lg:col-span-4 flex flex-wrap gap-2 justify-start lg:justify-end items-start content-start">
+      <div className="flex flex-wrap content-start items-start justify-start gap-2 lg:col-span-4 lg:justify-end">
         {tech.map((item) => (
           <Pill
             key={item}

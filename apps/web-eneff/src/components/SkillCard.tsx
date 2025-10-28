@@ -10,12 +10,12 @@ export const SkillCard = ({
   title,
 }: SkillCardProperties) => {
   return (
-    <article className="group p-6 sm:p-8 border border-border rounded-lg hover:border-muted-foreground/50 transition-all duration-500 hover:shadow-lg">
+    <article className="group border-border hover:border-muted-foreground/50 rounded-lg border p-6 transition-all duration-500 hover:shadow-lg sm:p-8">
       <div className="space-y-4">
-        <div className="flex items-center justify-between text-xs text-muted-foreground font-mono">
+        <div className="text-muted-foreground flex items-center justify-between font-mono text-xs">
           <span>{category}</span>
         </div>
-        <h3 className="text-lg sm:text-xl font-medium group-hover:text-muted-foreground transition-colors duration-300">
+        <h3 className="group-hover:text-muted-foreground text-lg font-medium transition-colors duration-300 sm:text-xl">
           {title}
         </h3>
         <p className="text-muted-foreground leading-relaxed">{excerpt}</p>

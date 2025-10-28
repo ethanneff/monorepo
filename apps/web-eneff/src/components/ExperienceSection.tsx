@@ -101,14 +101,14 @@ export const ExperienceSection = ({
 }: ExperienceSectionProperties) => {
   return (
     <section
-      className="min-h-screen py-20 sm:py-32 opacity-0"
+      className="min-h-screen py-20 opacity-0 sm:py-32"
       id="work"
       ref={onRefSet}
     >
       <div className="space-y-12 sm:space-y-16">
-        <div className="flex flex-row justify-between items-center gap-4">
-          <h2 className="text-3xl sm:text-4xl font-light">Experience</h2>
-          <div className="text-sm text-muted-foreground font-mono">
+        <div className="flex flex-row items-center justify-between gap-4">
+          <h2 className="text-3xl font-light sm:text-4xl">Experience</h2>
+          <div className="text-muted-foreground font-mono text-sm">
             {new Date().getFullYear() - 2012} years
           </div>
         </div>

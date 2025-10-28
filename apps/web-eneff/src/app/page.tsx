@@ -46,12 +46,12 @@ const Home = () => {
   );
 
   return (
-    <div className="min-h-screen bg-background text-foreground relative">
+    <div className="bg-background text-foreground relative min-h-screen">
       <Navigation
         activeSection={activeSection}
         sections={sections}
       />
-      <main className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-16">
+      <main className="mx-auto max-w-4xl px-6 sm:px-8 lg:px-16">
         <Header onRefSet={handleReferenceSet(0)} />
         <ExperienceSection onRefSet={handleReferenceSet(1)} />
         <SkillsSection onRefSet={handleReferenceSet(2)} />
