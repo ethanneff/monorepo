@@ -1,13 +1,11 @@
-import { Text, View } from '@shared/components';
+// eslint-disable-next-line no-restricted-imports
+import { Text, View } from 'react-native';
 
 export const ProductsScreen = () => {
   return (
-    <View
-      alignItems="center"
-      flex={1}
-      justifyContent="center"
-    >
-      <Text title="Products" />
+    <View className="flex-1 items-center justify-end bg-green-200">
+      {/* eslint-disable-next-line react/jsx-no-literals */}
+      <Text className="text-red-500">Products</Text>
     </View>
   );
 };
