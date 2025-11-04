@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-restricted-imports
-import Entypo from '@expo/vector-icons/Entypo';
+import RNIcon from '@expo/vector-icons/MaterialCommunityIcons';
 
-export type IconName = keyof typeof Entypo.glyphMap;
+export type IconName = keyof typeof RNIcon.glyphMap;
 
 type IconProperties = {
   readonly color: string;
@@ -11,7 +11,7 @@ type IconProperties = {
 
 export const Icon = ({ color, name, size }: IconProperties) => {
   return (
-    <Entypo
+    <RNIcon
       color={color}
       name={name}
       size={size}
