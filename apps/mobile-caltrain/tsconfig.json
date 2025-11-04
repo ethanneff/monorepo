@@ -1,5 +1,0 @@
-{
-  "extends": "@tooling/tsconfig/react-native",
-  "compilerOptions": { "paths": { "@/*": ["./src/*"] } },
-  "include": ["**/*.ts", "**/*.tsx"]
-}
