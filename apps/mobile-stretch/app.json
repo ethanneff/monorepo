@@ -10,7 +10,7 @@
     "ios": {
       "supportsTablet": true
     },
-    "name": "mobile-discover",
+    "name": "Stretch",
     "newArchEnabled": true,
     "orientation": "portrait",
     "plugins": [
@@ -21,10 +21,11 @@
           "backgroundColor": "#ffffff",
           "image": "src/assets/images/splash-icon.png"
         }
-      ]
+      ],
+      "expo-localization"
     ],
-    "scheme": "mobile-caltrain",
-    "slug": "mobile-caltrain",
+    "scheme": "mobile-stretch",
+    "slug": "mobile-stretch",
     "userInterfaceStyle": "automatic",
     "version": "1.0.0",
     "web": {

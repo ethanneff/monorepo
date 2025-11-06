@@ -47,7 +47,7 @@
     "@tooling/tsconfig": "workspace:*"
   },
   "main": "index.tsx",
-  "name": "@apps/mobile-discover",
+  "name": "@apps/mobile-mindloop",
   "private": true,
   "scripts": {
     "android": "expo start --android",
