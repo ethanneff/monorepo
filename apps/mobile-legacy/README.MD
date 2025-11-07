@@ -253,3 +253,14 @@ It’s not just about saving words — it’s about saving who they are.”
 
 Would you like me to visualize the Legacy app architecture and flow (a clean diagram like the “Stretch” concept) showing user → story capture → AI → family sharing → Life Book output?
 That visual would make this pitch investor- and designer-ready.
+
+19. Future Features
+
+- Record voice
+- Wiki
+- Short stories
+- Website
+- Book
+- Eualogy
+- Biography
+- Photo book
