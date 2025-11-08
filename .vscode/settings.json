@@ -3,7 +3,6 @@
     "source.fixAll": "always",
     "source.addMissingImports": "always",
     "source.removeUnusedImports": "always",
-    "source.organizeImports": "always",
     "source.sortMembers": "always"
   },
   "editor.formatOnSave": true,
