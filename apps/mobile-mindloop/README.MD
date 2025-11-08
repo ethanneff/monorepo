@@ -10,7 +10,7 @@ Tagline: Learn, retain, and apply the world’s best ideas — faster.
 
 Problem
 
-People consume vast amounts of educational content — books, podcasts, videos — but forget most of it within weeks. Traditional summary apps like Blinkist provide surface-level exposure but fail to help users retain and apply the knowledge.
+People consume vast amounts of educational content — books, podcasts, videos — but forget most of it within weeks (Ebbinghaus curve). Traditional summary apps like Blinkist provide surface-level exposure but fail to help users retain and apply the knowledge.
 
 Solution
 
