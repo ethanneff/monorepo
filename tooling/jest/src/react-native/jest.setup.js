@@ -51,19 +51,16 @@ jest.mock('react-native-webview', () => ({
   WebView: () => <div>Mock WebView</div>,
 }));
 jest.mock('lottie-react-native', () => undefined);
-jest.mock('@expo/vector-icons/Entypo', () => {
+jest.mock('@expo/vector-icons/MaterialCommunityIcons', () => {
   const React = require('react');
   return {
     __esModule: true,
-    default: 'Entypo',
+    default: 'MaterialCommunityIcons',
     glyphMap: {},
   };
 });
 jest.mock('expo-image', () => ({
   Image: 'Image',
-}));
-jest.mock('expo-linear-gradient', () => ({
-  LinearGradient: 'LinearGradient',
 }));
 jest.mock('@react-native-community/netinfo', () => mockRNNetInfo);
 jest.mock('react-native-device-info', () => mockRNDeviceInfo);
