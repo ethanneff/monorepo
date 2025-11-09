@@ -9,7 +9,7 @@ set -e
 if [ "$CI" = "true" ]; then
   # CI mode: check only
   prettier --check --ignore-unknown --log-level=error . && \
-  sherif --check && \
+  sherif && \
   knip && \
   madge --circular --extensions ts,tsx . && \
   git ls-files -co --exclude-standard -- '*.sh' | xargs -r shellcheck

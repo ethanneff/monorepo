@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Run project-specific clean scripts first (while node_modules still exists)
-pnpx turbo run clean --parallel
+pnpx turbo clean --parallel
 
 # Then remove common build artifacts and dependencies
 find . -type d \( \
