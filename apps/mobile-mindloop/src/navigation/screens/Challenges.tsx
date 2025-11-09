@@ -1,14 +1,9 @@
-import { Text, View } from '@shared/components';
+import { Text, View } from 'react-native';
 
 export const ChallengesScreen = () => {
   return (
-    <View
-      alignItems="center"
-      flex={1}
-      justifyContent="center"
-    >
-      <Text title="Challenges Screen" />
-      <Text title="This is where challenges will be displayed" />
+    <View className="flex-1 items-center justify-center bg-white">
+      <Text className="text-xl font-bold text-blue-800">Challenges Screen</Text>
     </View>
   );
 };
