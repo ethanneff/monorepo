@@ -3,7 +3,6 @@ import { type ReactNode } from 'react';
 import {
   // eslint-disable-next-line no-restricted-imports
   View as RNView,
-  type StyleProp,
   StyleSheet,
   type ViewProps,
   type ViewStyle,
@@ -17,7 +16,6 @@ export type ViewProperties = ViewProps &
     readonly hasDropShadow?: boolean;
     readonly safeArea?: boolean;
     readonly safeAreaEdges?: SafeAreaEdges[];
-    readonly style?: StyleProp<ViewStyle>;
   };
 
 type SafeAreaEdges = 'bottom' | 'left' | 'right' | 'top';

@@ -1,13 +1,19 @@
-// eslint-disable-next-line no-restricted-imports
-import { ScrollView as RNScrollView, type ScrollViewProps } from 'react-native';
+import { useTheme } from '@shared/utils';
+import { type ScrollViewProps } from 'react-native';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-controller';
 
 export const ScrollView = ({ children, ...rest }: ScrollViewProps) => {
+  const { theme } = useTheme();
+  const indicatorStyle = theme === 'dark' ? 'white' : 'black';
+
   return (
-    <RNScrollView
+    <KeyboardAwareScrollView
+      indicatorStyle={indicatorStyle}
+      keyboardShouldPersistTaps="handled"
       // eslint-disable-next-line react/jsx-props-no-spreading
       {...rest}
     >
       {children}
-    </RNScrollView>
+    </KeyboardAwareScrollView>
   );
 };

@@ -6,5 +6,5 @@ export { Row } from './Row/Row';
 export { SafeAreaView } from './SafeAreaView/SafeAreaView';
 export { ScrollView } from './ScrollView/ScrollView';
 export { Text } from './Text/Text';
-export { TouchableOpacity } from './TouchableOpacity/TouchableOpacity';
+export { Touchable } from './Touchable/Touchable';
 export { View } from './View/View';
