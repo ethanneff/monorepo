@@ -1,4 +1,4 @@
-import { dropShadow } from '@shared/utils';
+import { useDropShadow } from '@shared/utils';
 import { type ReactNode } from 'react';
 import {
   // eslint-disable-next-line no-restricted-imports
@@ -32,7 +32,7 @@ export const View = ({
   ...rest
 }: ViewProperties) => {
   const absolute = absoluteFillObject ? StyleSheet.absoluteFillObject : {};
-  const dropShadowStyle = dropShadow(hasDropShadow);
+  const dropShadowStyle = useDropShadow(hasDropShadow);
   const styles = StyleSheet.create({
     view: { ...absolute, ...dropShadowStyle, ...rest },
   });
