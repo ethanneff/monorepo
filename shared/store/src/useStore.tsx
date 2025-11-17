@@ -10,11 +10,12 @@ import {
 } from 'zustand/middleware';
 import { immer } from 'zustand/middleware/immer';
 import { type StateCreator } from 'zustand/vanilla';
+import { type Store } from './globals';
 import { sliceApplication } from './slices/sliceApplication';
 import { sliceAuth } from './slices/sliceAuth';
 import { sliceSession } from './slices/sliceSession';
 
-const slices: StateCreator<MegaStore> = (...api) => ({
+const slices: StateCreator<Store> = (...api) => ({
   application: sliceApplication(...api),
   auth: sliceAuth(...api),
   session: sliceSession(...api),
@@ -39,7 +40,7 @@ const zustandStorage: StateStorage = {
   },
 };
 
-export const useMegaStore = create<MegaStore>()(
+export const useStore = create<Store>()(
   devtools(
     persist(immer(slices), {
       merge: (persisted, current) => merge({}, current, persisted),

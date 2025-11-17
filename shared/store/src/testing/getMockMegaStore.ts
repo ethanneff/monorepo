@@ -1,8 +1,8 @@
 import { jest } from '@jest/globals';
-import { type MegaStore } from '../globals';
+import { type Store } from '../globals';
 
-export const getMockMegaStore = () => {
-  const store: MegaStore = {
+export const getMockStore = () => {
+  const store: Store = {
     application: {
       actions: {
         incrementAppOpenCount: jest.fn(),
@@ -26,7 +26,7 @@ export const getMockMegaStore = () => {
     },
   };
 
-  const set = (callback: (store: MegaStore) => void) => {
+  const set = (callback: (store: Store) => void) => {
     callback(store);
   };
 

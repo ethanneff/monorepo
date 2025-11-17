@@ -1,7 +1,8 @@
 import { type StateCreator } from 'zustand';
+import { type Store } from '../globals';
 
 export type Slice<State> = StateCreator<
-  MegaStore,
+  Store,
   [['zustand/immer', never]],
   [],
   State
