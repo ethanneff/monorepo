@@ -1,4 +1,4 @@
-import { isServer } from '../Environment/isServer';
+import { isServer } from '../Environment/environment';
 import { type Base4, smallestDimension } from './types';
 
 export const spacing = (size: Base4, factor = 0.25) => {

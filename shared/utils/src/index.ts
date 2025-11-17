@@ -1,6 +1,4 @@
-export { isReactNative } from './Environment/isReactNative';
-export { isServer } from './Environment/isServer';
-export { isTest } from './Environment/isTest';
+export { isReactNative, isServer, isTest } from './Environment/environment';
 export { spacing } from './Spacing/spacing';
-export { type ColorName, colorNames } from './Theme/colorNames';
-export { dropShadow } from './Theme/dropShadow';
+export { type ColorName, useAppTheme } from './Theme/useAppTheme';
+export { useDropShadow } from './Theme/useDropShadow';
