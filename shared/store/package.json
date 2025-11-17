@@ -1,0 +1,28 @@
+{
+  "dependencies": {
+    "@shared/utils": "workspace:*",
+    "immer": "10.1.1",
+    "lodash": "4.17.21",
+    "react": "19.1.0",
+    "react-native": "0.81.5",
+    "react-native-mmkv": "^4.0.0",
+    "reselect": "5.1.1",
+    "zustand": "5.0.8"
+  },
+  "devDependencies": {
+    "@jest/globals": "30.2.0",
+    "@tooling/eslint": "workspace:*",
+    "@tooling/jest": "workspace:*",
+    "@tooling/tsconfig": "workspace:*",
+    "@types/lodash": "4.17.16"
+  },
+  "main": "src/index.ts",
+  "module": "src/index.ts",
+  "name": "@shared/store",
+  "private": true,
+  "scripts": {
+    "lint": "./../../tooling/scripts/lint.sh",
+    "test": "./../../tooling/scripts/test.sh"
+  },
+  "version": "0.0.0"
+}
