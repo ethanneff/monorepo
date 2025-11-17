@@ -2,28 +2,31 @@
 
 ## v3 app
 
-- [ ] discover
-  - [ ] core functionality
-  - [ ] library tokens
-  - [ ] copy duolingo
+- [ ] stretch
+  - [ ] tab navigation
+  - [ ] onboarding navigation
+  - [ ] clean up ui
   - [ ] supabase
   - [ ] auth
   - [ ] revenuecat
+  - [ ] sentry
+  - [ ] posthog
 
 ## v2 polish
 
-- [ ] eneff.com
-  - [ ] update copy
-  - [ ] analytics
+- [x] eneff.com
+  - [x] update copy
+  - [x] analytics
 - [x] neff.app
   - [x] build something
   - [x] deploy
-- [ ] caltrain
-  - [ ] build poc
-  - [ ] deploy
+- [x] caltrain
+  - [x] build poc
+  - [x] deploy
 - [ ] migrate old code
   - [ ] playground
   - [ ] expo
+- [x] neff.app deploy
 
 ## v1 foundation
 
