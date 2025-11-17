@@ -1,9 +1,5 @@
 import mockRNNetInfo from '@react-native-community/netinfo/jest/netinfo-mock.js';
-import { NativeModules } from 'react-native';
 import mockRNDeviceInfo from 'react-native-device-info/jest/react-native-device-info-mock';
-import mockSafeAreaContext from 'react-native-safe-area-context/jest/mock';
-
-jest.mock('react-native-safe-area-context', () => mockSafeAreaContext);
 
 // Mock react-native-gesture-handler
 jest.mock('react-native-gesture-handler', () => {
@@ -84,20 +80,6 @@ jest.mock('@react-navigation/core', () => ({
     navigate: jest.fn(),
   }),
 }));
-
-NativeModules.RNCAsyncStorage = {
-  clear: jest.fn(),
-  flushGetRequests: jest.fn(),
-  getAllKeys: jest.fn(),
-  getItem: jest.fn(),
-  mergeItem: jest.fn(),
-  multiGet: jest.fn(),
-  multiMerge: jest.fn(),
-  multiRemove: jest.fn(),
-  multiSet: jest.fn(),
-  removeChecklistItem: jest.fn(),
-  setItem: jest.fn(),
-};
 
 jest.mock('react-native/Libraries/EventEmitter/NativeEventEmitter');
 
