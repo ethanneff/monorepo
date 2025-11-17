@@ -1,4 +1,3 @@
-import { useTheme } from '@shared/utils';
 import {
   createContext,
   use,
@@ -16,6 +15,7 @@ import { Divider } from '../Divider/Divider';
 import { Icon } from '../Icon/Icon';
 import { Pressable } from '../Pressable/Pressable';
 import { Text } from '../Text/Text';
+import { useTheme } from '../Theme/useTheme';
 import { View } from '../View/View';
 
 type AccordionContextType = {

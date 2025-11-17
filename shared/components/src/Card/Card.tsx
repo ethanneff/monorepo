@@ -1,6 +1,6 @@
-import { useTheme } from '@shared/utils';
 import { type StyleProp, type ViewStyle } from 'react-native';
 import { useStore } from '../../../store/src';
+import { useTheme } from '../Theme/useTheme';
 import { View } from '../View/View';
 
 type CardProperties = {

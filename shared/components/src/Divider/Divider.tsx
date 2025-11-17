@@ -1,4 +1,4 @@
-import { useTheme } from '@shared/utils';
+import { useTheme } from '../Theme/useTheme';
 import { View } from '../View/View';
 
 export const Divider = () => {

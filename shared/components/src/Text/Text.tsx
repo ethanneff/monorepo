@@ -1,7 +1,8 @@
-import { type ColorName, useTheme } from '@shared/utils';
+import { type ColorName } from '@shared/utils';
 // eslint-disable-next-line no-restricted-imports
 import { Text as RNText, type TextProps, type TextStyle } from 'react-native';
 import { useTypography } from '../Text/useTypography';
+import { useTheme } from '../Theme/useTheme';
 import { type FontFamily, type Variant } from './utilities';
 
 type Properties = {

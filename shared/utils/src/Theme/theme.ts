@@ -1,5 +1,3 @@
-import { useStore } from '@shared/store';
-
 export type ColorName =
   | 'accent'
   | 'accentForeground'
@@ -34,9 +32,9 @@ export type ColorName =
   | 'sidebarRing'
   | 'transparent';
 
-type Theme = 'dark' | 'light';
+export type Theme = 'dark' | 'light';
 
-const colors: Record<Theme, Record<ColorName, string>> = {
+export const colors: Record<Theme, Record<ColorName, string>> = {
   dark: {
     accent: 'hsl(240 3.7% 15.9%)',
     accentForeground: 'hsl(0 0% 98%)',
@@ -107,7 +105,7 @@ const colors: Record<Theme, Record<ColorName, string>> = {
   },
 };
 
-const spacing = {
+export const spacing = {
   $0: 0,
   $1: 1,
   $2: 2,
@@ -145,7 +143,7 @@ const spacing = {
   $384: 384,
 };
 
-const borderRadius = {
+export const borderRadius = {
   $0: 0,
   $2: 2,
   $4: 4,
@@ -155,14 +153,4 @@ const borderRadius = {
   $16: 16,
   $24: 24,
   $9999: 9999,
-};
-
-export const useTheme = () => {
-  const { theme } = useStore((state) => state.application);
-  return {
-    borderRadius,
-    colors: colors[theme],
-    spacing,
-    theme,
-  };
 };

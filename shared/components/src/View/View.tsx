@@ -1,4 +1,3 @@
-import { useDropShadow } from '@shared/utils';
 import { type ReactNode } from 'react';
 import {
   // eslint-disable-next-line no-restricted-imports
@@ -8,6 +7,7 @@ import {
   type ViewStyle,
 } from 'react-native';
 import { SafeAreaView } from '../SafeAreaView/SafeAreaView';
+import { useDropShadow } from '../Theme/useDropShadow';
 
 export type ViewProperties = ViewProps &
   ViewStyle & {

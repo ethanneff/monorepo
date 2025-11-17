@@ -1,4 +1,3 @@
-import { useTheme } from '@shared/utils';
 import { useCallback, useState } from 'react';
 // eslint-disable-next-line no-restricted-imports
 import { Pressable, type ViewStyle } from 'react-native';
@@ -7,6 +6,7 @@ import { useButtonStyles } from '../Button/useButtonStyles';
 import { Icon, type IconName } from '../Icon/Icon';
 import { Loader } from '../Loader/Loader';
 import { Text } from '../Text/Text';
+import { useTheme } from '../Theme/useTheme';
 import { View } from '../View/View';
 
 type Properties = {

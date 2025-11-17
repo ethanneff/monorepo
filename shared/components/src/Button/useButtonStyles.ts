@@ -1,5 +1,6 @@
-import { assertNever, type ColorName, useTheme } from '@shared/utils';
+import { assertNever, type ColorName } from '@shared/utils';
 import { type ButtonVariant } from '../Button/types';
+import { useTheme } from '../Theme/useTheme';
 
 type ButtonStyles = {
   backgroundColor: string;

@@ -1,10 +1,10 @@
 import { beforeEach, describe, expect, it, jest } from '@jest/globals';
 import { Dimensions } from 'react-native';
-import { spacing } from '../spacing';
+import { responsive } from '../responsive';
 
 const mockDimensionsGet = jest.spyOn(Dimensions, 'get');
 
-describe('spacing', () => {
+describe('responsive', () => {
   beforeEach(() => {
     jest.clearAllMocks();
   });
@@ -22,24 +22,24 @@ describe('spacing', () => {
     it('should return the size unchanged when smallest dimension equals baseline', () => {
       expect.assertions(1);
 
-      const result = spacing(16);
+      const result = responsive(16);
 
       expect(result).toBe(16);
     });
 
     it('should work with different Base4 sizes', () => {
       expect.assertions(5);
-      expect(spacing(0)).toBe(0);
-      expect(spacing(8)).toBe(8);
-      expect(spacing(24)).toBe(24);
-      expect(spacing(48)).toBe(48);
-      expect(spacing(100)).toBe(100);
+      expect(responsive(0)).toBe(0);
+      expect(responsive(8)).toBe(8);
+      expect(responsive(24)).toBe(24);
+      expect(responsive(48)).toBe(48);
+      expect(responsive(100)).toBe(100);
     });
 
     it('should handle custom factor parameter', () => {
       expect.assertions(1);
 
-      const result = spacing(16, 0.5);
+      const result = responsive(16, 0.5);
 
       expect(result).toBe(16);
     });
@@ -55,27 +55,27 @@ describe('spacing', () => {
       });
     });
 
-    it('should scale up spacing with default factor (0.25)', () => {
+    it('should scale up responsive with default factor (0.25)', () => {
       expect.assertions(1);
 
-      const result = spacing(16);
+      const result = responsive(16);
 
       expect(result).toBe(20);
     });
 
     it('should scale proportionally for different sizes', () => {
       expect.assertions(3);
-      expect(spacing(8)).toBe(10);
-      expect(spacing(24)).toBe(30);
-      expect(spacing(100)).toBe(125);
+      expect(responsive(8)).toBe(10);
+      expect(responsive(24)).toBe(30);
+      expect(responsive(100)).toBe(125);
     });
 
     it('should apply custom factor correctly', () => {
       expect.assertions(2);
 
-      expect(spacing(16, 0.5)).toBe(24);
+      expect(responsive(16, 0.5)).toBe(24);
 
-      expect(spacing(16, 1)).toBe(32);
+      expect(responsive(16, 1)).toBe(32);
     });
   });
 
@@ -89,10 +89,10 @@ describe('spacing', () => {
       });
     });
 
-    it('should scale down spacing for smaller screens', () => {
+    it('should scale down responsive for smaller screens', () => {
       expect.assertions(1);
 
-      const result = spacing(16);
+      const result = responsive(16);
       const expected = 16 * (1 + (320 / 375 - 1) * 0.25);
 
       expect(result).toBeCloseTo(expected, 2);
@@ -112,7 +112,7 @@ describe('spacing', () => {
     it('should use the smallest dimension (height in this case)', () => {
       expect.assertions(1);
 
-      const result = spacing(16);
+      const result = responsive(16);
 
       expect(result).toBe(16);
     });
@@ -131,7 +131,7 @@ describe('spacing', () => {
     it('should scale appropriately for tablet sizes', () => {
       expect.assertions(1);
 
-      const result = spacing(16);
+      const result = responsive(16);
       const expected = 16 * (1 + (768 / 375 - 1) * 0.25);
 
       expect(result).toBeCloseTo(expected, 2);
@@ -150,13 +150,13 @@ describe('spacing', () => {
 
     it('should handle zero size', () => {
       expect.assertions(1);
-      expect(spacing(0)).toBe(0);
+      expect(responsive(0)).toBe(0);
     });
 
     it('should handle zero factor', () => {
       expect.assertions(1);
 
-      const result = spacing(16, 0);
+      const result = responsive(16, 0);
 
       expect(result).toBe(16);
     });
@@ -171,14 +171,14 @@ describe('spacing', () => {
         width: 750,
       });
 
-      const result = spacing(16, -0.25);
+      const result = responsive(16, -0.25);
 
       expect(result).toBe(12);
     });
 
     it('should handle very large sizes', () => {
       expect.assertions(1);
-      expect(spacing(1000)).toBe(1000);
+      expect(responsive(1000)).toBe(1000);
     });
   });
 
@@ -195,7 +195,7 @@ describe('spacing', () => {
     it('should maintain precision in calculations', () => {
       expect.assertions(1);
 
-      const result = spacing(16);
+      const result = responsive(16);
       const expected = 16 * (1 + (414 / 375 - 1) * 0.25);
 
       expect(result).toBeCloseTo(expected, 10);

@@ -1,6 +1,6 @@
-import { useTheme } from '@shared/utils';
 import { type ScrollViewProps } from 'react-native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-controller';
+import { useTheme } from '../Theme/useTheme';
 
 export const ScrollView = ({ children, ...rest }: ScrollViewProps) => {
   const { theme } = useTheme();

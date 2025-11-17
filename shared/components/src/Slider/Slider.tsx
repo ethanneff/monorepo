@@ -1,5 +1,4 @@
 /* eslint-disable new-cap */
-import { useTheme } from '@shared/utils';
 import { useCallback } from 'react';
 import { Dimensions } from 'react-native';
 import { Gesture, GestureDetector } from 'react-native-gesture-handler';
@@ -8,6 +7,7 @@ import Animated, {
   useSharedValue,
   withSpring,
 } from 'react-native-reanimated';
+import { useTheme } from '../Theme/useTheme';
 import { View } from '../View/View';
 
 const { width } = Dimensions.get('window');

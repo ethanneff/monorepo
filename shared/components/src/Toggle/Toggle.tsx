@@ -1,10 +1,10 @@
-import { useTheme } from '@shared/utils';
 import Animated, {
   FadeIn,
   FadeOut,
   useAnimatedStyle,
   withTiming,
 } from 'react-native-reanimated';
+import { useTheme } from '../Theme/useTheme';
 import { Touchable } from '../Touchable/Touchable';
 import { View } from '../View/View';
 

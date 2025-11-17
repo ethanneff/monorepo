@@ -1,4 +1,3 @@
-import { useTheme } from '@shared/utils';
 import {
   Modal as RNModal,
   StyleSheet,
@@ -6,6 +5,7 @@ import {
   TouchableWithoutFeedback,
 } from 'react-native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-controller';
+import { useTheme } from '../Theme/useTheme';
 import { View } from '../View/View';
 
 type Properties = {

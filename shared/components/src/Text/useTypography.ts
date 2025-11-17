@@ -1,4 +1,4 @@
-import { assertNever, useTheme } from '@shared/utils';
+import { assertNever } from '@shared/utils';
 import { type TextStyle } from 'react-native';
 import {
   geistFontFamily,
@@ -7,6 +7,7 @@ import {
   textSize,
   type Variant,
 } from '../Text/utilities';
+import { useTheme } from '../Theme/useTheme';
 
 export const useTypography = (variant: Variant): TextStyle => {
   const { colors, spacing } = useTheme();

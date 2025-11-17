@@ -1,5 +1,5 @@
-import { useTheme } from '@shared/utils';
 import { Text } from '../Text/Text';
+import { useTheme } from '../Theme/useTheme';
 import { View } from '../View/View';
 
 type TableProperties = {

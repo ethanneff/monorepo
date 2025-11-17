@@ -1,4 +1,3 @@
-import { useTheme } from '@shared/utils';
 import { useCallback, useRef, useState } from 'react';
 import {
   // eslint-disable-next-line no-restricted-imports
@@ -7,6 +6,7 @@ import {
 } from 'react-native';
 import { Icon, type IconName } from '../Icon/Icon';
 import { Text } from '../Text/Text';
+import { useTheme } from '../Theme/useTheme';
 import { Touchable } from '../Touchable/Touchable';
 import { View } from '../View/View';
 

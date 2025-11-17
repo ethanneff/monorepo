@@ -1,4 +1,4 @@
-import { type ColorName, useTheme } from '@shared/utils';
+import { type ColorName } from '@shared/utils';
 import { useEffect } from 'react';
 import Animated, {
   Easing,
@@ -8,6 +8,7 @@ import Animated, {
   withRepeat,
   withTiming,
 } from 'react-native-reanimated';
+import { useTheme } from '../Theme/useTheme';
 import { View } from '../View/View';
 
 type DotProperties = {

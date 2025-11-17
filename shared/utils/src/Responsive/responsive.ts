@@ -1,7 +1,7 @@
 import { Dimensions } from 'react-native';
 import { type Base4, smallestDimension } from './types';
 
-export const spacing = (size: Base4, factor = 0.25) => {
+export const responsive = (size: Base4, factor = 0.25) => {
   const { height, width } = Dimensions.get('window');
   const smallest = Math.min(width, height);
   const diff = smallest / smallestDimension;

@@ -1,7 +1,12 @@
 export { isReactNative, isServer, isTest } from './Environment/environment';
-export { spacing } from './Spacing/spacing';
-export { useDropShadow } from './Theme/useDropShadow';
-export { type ColorName, useTheme } from './Theme/useTheme';
+export { responsive } from './Responsive/responsive';
+export {
+  borderRadius,
+  type ColorName,
+  colors,
+  spacing,
+  type Theme,
+} from './Theme/theme';
 export {
   assertNever,
   typedEntries,

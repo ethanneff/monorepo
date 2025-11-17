@@ -1,4 +1,4 @@
-import { spacing } from '@shared/utils';
+import { responsive } from '@shared/utils';
 import { View, type ViewProperties } from '../View/View';
 
 export const Row = ({ children, ...rest }: ViewProperties) => {
@@ -6,7 +6,7 @@ export const Row = ({ children, ...rest }: ViewProperties) => {
     <View
       flexDirection="row"
       flexWrap="wrap"
-      gap={spacing(4)}
+      gap={responsive(4)}
       // eslint-disable-next-line react/jsx-props-no-spreading
       {...rest}
     >
