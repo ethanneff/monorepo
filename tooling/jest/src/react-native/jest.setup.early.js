@@ -20,4 +20,3 @@ jest.mock('react-native-mmkv', () => ({
   useMMKVBoolean: jest.fn(),
   useMMKVObject: jest.fn(),
 }));
-
