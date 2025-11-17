@@ -1,5 +1,4 @@
 import { jest } from '@jest/globals';
-import { type Store } from '../globals';
 
 export const getMockStore = () => {
   const store: Store = {
