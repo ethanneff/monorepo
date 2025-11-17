@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "@shared/utils": "workspace:*",
     "immer": "10.1.1",
     "lodash": "4.17.21",
     "react": "19.1.0",

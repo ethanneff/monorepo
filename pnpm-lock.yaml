@@ -619,6 +619,9 @@ importers:
       '@shared/components':
         specifier: workspace:*
         version: link:../components
+      '@shared/store':
+        specifier: workspace:*
+        version: link:../store
       '@shared/utils':
         specifier: workspace:*
         version: link:../utils
@@ -653,9 +656,6 @@ importers:
 
   shared/store:
     dependencies:
-      '@shared/utils':
-        specifier: workspace:*
-        version: link:../utils
       immer:
         specifier: 10.1.1
         version: 10.1.1
@@ -696,9 +696,6 @@ importers:
 
   shared/utils:
     dependencies:
-      '@shared/store':
-        specifier: workspace:*
-        version: link:../store
       react-native:
         specifier: 0.81.5
         version: 0.81.5(@babel/core@7.28.4)(@react-native-community/cli@20.0.2(typescript@5.9.3))(@types/react@19.1.17)(react@19.1.0)

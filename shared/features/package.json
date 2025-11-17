@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "@shared/components": "workspace:*",
+    "@shared/store": "workspace:*",
     "@shared/utils": "workspace:*",
     "@vercel/analytics": "1.5.0",
     "@vercel/speed-insights": "1.2.0",

@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "@shared/store": "workspace:*",
     "react-native": "0.81.5"
   },
   "devDependencies": {
