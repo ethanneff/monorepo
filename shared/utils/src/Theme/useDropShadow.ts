@@ -1,7 +1,7 @@
-import { useAppTheme } from './useAppTheme';
+import { useTheme } from './useTheme';
 
 export const useDropShadow = (show?: boolean) => {
-  const { colors } = useAppTheme();
+  const { colors } = useTheme();
   if (!show) return {};
   return {
     elevation: 2,
