@@ -1,3 +1,5 @@
+'use client';
+
 import { Col, Text } from '@shared/components';
 
 export const Hero = () => {

@@ -1,44 +1,19 @@
 import { merge } from 'lodash';
-import { Platform } from 'react-native';
-import { createMMKV } from 'react-native-mmkv';
 import { create } from 'zustand';
-import {
-  createJSONStorage,
-  devtools,
-  persist,
-  type StateStorage,
-} from 'zustand/middleware';
+import { createJSONStorage, devtools, persist } from 'zustand/middleware';
 import { immer } from 'zustand/middleware/immer';
 import { type StateCreator } from 'zustand/vanilla';
 import { type Store } from './globals';
 import { sliceApplication } from './slices/sliceApplication';
 import { sliceAuth } from './slices/sliceAuth';
 import { sliceSession } from './slices/sliceSession';
+import { zustandStorage } from './storage';
 
 const slices: StateCreator<Store> = (...api) => ({
   application: sliceApplication(...api),
   auth: sliceAuth(...api),
   session: sliceSession(...api),
 });
-
-const storage = createMMKV({
-  encryptionKey: 'zustand-mmvk-encryption-key',
-  // TODO: need environment prod|staging|dev
-  id: `zustand-mmvk-${Platform.OS}`,
-});
-
-const zustandStorage: StateStorage = {
-  getItem: (name) => {
-    const value = storage.getString(name);
-    return value ?? null;
-  },
-  removeItem: (name) => {
-    return storage.remove(name);
-  },
-  setItem: (name, value) => {
-    storage.set(name, value);
-  },
-};
 
 export const useStore = create<Store>()(
   devtools(

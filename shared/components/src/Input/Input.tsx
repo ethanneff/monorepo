@@ -1,3 +1,4 @@
+'use client';
 import { useCallback, useRef, useState } from 'react';
 import {
   // eslint-disable-next-line no-restricted-imports

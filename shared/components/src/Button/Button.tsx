@@ -1,3 +1,4 @@
+'use client';
 import { useCallback, useState } from 'react';
 // eslint-disable-next-line no-restricted-imports
 import { Pressable, type ViewStyle } from 'react-native';

@@ -3,7 +3,8 @@
   "compilerOptions": {
     "declaration": false,
     "declarationMap": false,
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "allowJs": true
   },
   "extends": "./tsconfig.base.json"
 }

@@ -1,7 +1,7 @@
 import { isServer } from '../Environment/environment';
 import { type Base4, smallestDimension } from './types';
 
-export const spacing = (size: Base4, factor = 0.25) => {
+export const responsive = (size: Base4, factor = 0.25) => {
   const width = isServer ? 1920 : window.innerWidth;
   const height = isServer ? 1080 : window.innerHeight;
   const smallest = Math.min(width, height);

@@ -1,3 +1,5 @@
+'use client';
+
 import { Fragment, type PropsWithChildren } from 'react';
 
 export const Root = ({ children }: PropsWithChildren) => {

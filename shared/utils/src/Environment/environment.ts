@@ -11,3 +11,7 @@ export const isServer =
   (globalThis.window === undefined || typeof document === 'undefined') &&
   !isReactNative &&
   !isTest;
+
+export const isWeb =
+  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition, sonarjs/different-types-comparison
+  globalThis.window !== undefined && !isReactNative && !isTest;

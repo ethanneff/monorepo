@@ -6,24 +6,24 @@ const nextConfig: NextConfig = {
     'react-native-web',
     '@shared/components',
     '@shared/features',
+    '@shared/store',
     '@shared/utils',
   ],
 
-  webpack: (config: {
-    resolve: {
-      alias: Record<string, boolean | string>;
-      extensions: string[];
-    };
-  }) => {
+  webpack: (config, { webpack }) => {
+    // Define React Native globals for web
+    config.plugins.push(
+      new webpack.DefinePlugin({
+        __DEV__: JSON.stringify(process.env.NODE_ENV !== 'production'),
+      }),
+    );
     // Alias react-native to react-native-web
     config.resolve.alias = {
       ...config.resolve.alias,
       'react-native$': 'react-native-web',
     };
-    // Add react-native-web extensions
+    // Add react-native-web extensions (prioritize .web files)
     config.resolve.extensions = [
-      '.web.js',
-      '.web.jsx',
       '.web.ts',
       '.web.tsx',
       ...config.resolve.extensions,

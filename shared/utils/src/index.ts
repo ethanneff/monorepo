@@ -1,4 +1,9 @@
-export { isReactNative, isServer, isTest } from './Environment/environment';
+export {
+  isReactNative,
+  isServer,
+  isTest,
+  isWeb,
+} from './Environment/environment';
 export { responsive } from './Responsive/responsive';
 export {
   borderRadius,
