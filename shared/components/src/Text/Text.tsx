@@ -1,3 +1,5 @@
+'use client';
+
 import { type ColorName } from '@shared/utils';
 // eslint-disable-next-line no-restricted-imports
 import { Text as RNText, type TextProps, type TextStyle } from 'react-native';
