@@ -26,6 +26,7 @@
 - [ ] migrate old code
   - [ ] playground
   - [ ] expo
+  - [ ] go through branches and prs
 - [x] neff.app deploy
 
 ## v1 foundation
