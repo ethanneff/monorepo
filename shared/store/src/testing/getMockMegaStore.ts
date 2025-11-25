@@ -1,5 +1,7 @@
 import { jest } from '@jest/globals';
 
+const unsubscribe = () => false;
+
 export const getMockStore = () => {
   const store: Store = {
     application: {
@@ -35,9 +37,7 @@ export const getMockStore = () => {
     getInitialState: get,
     getState: get,
     setState: () => false,
-    subscribe: () => {
-      return () => false;
-    },
+    subscribe: () => unsubscribe,
   };
 
   return { api, get, set, store };
