@@ -27,7 +27,7 @@
   - [ ] playground
   - [ ] expo
   - [ ] go through branches and prs
-  - [ ] fix mobile builds
+  - [x] fix mobile builds
 - [x] neff.app deploy
 
 ## v1 foundation
