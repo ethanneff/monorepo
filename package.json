@@ -12,18 +12,18 @@
   },
   "devDependencies": {
     "husky": "9.1.7",
-    "knip": "5.68.0",
+    "knip": "5.70.2",
     "madge": "8.0.0",
     "only-allow": "1.2.1",
     "prettier": "3.6.2",
     "shellcheck": "4.1.0",
-    "sherif": "1.8.0",
-    "turbo": "2.6.0"
+    "sherif": "1.9.0",
+    "turbo": "2.6.1"
   },
-  "packageManager": "pnpm@10.20.0",
+  "packageManager": "pnpm@10.23.0",
   "name": "@shared/monorepo",
   "engines": {
     "node": "22",
-    "pnpm": "10.20.0"
+    "pnpm": "10.23.0"
   }
 }
