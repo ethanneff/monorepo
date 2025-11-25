@@ -88,6 +88,8 @@ storybook-static/
 /build
 *.jsbundle
 next-env.d.ts
+ios/
+android/
 
 # Environment files
 .env*

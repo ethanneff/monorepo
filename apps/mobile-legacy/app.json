@@ -4,11 +4,13 @@
       "adaptiveIcon": {
         "backgroundColor": "#ffffff",
         "foregroundImage": "src/assets/images/adaptive-icon.png"
-      }
+      },
+      "package": "com.ethanneff.mobilelegacy"
     },
     "icon": "src/assets/images/icon.png",
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.ethanneff.mobilelegacy"
     },
     "name": "mobile-legacy",
     "newArchEnabled": true,
