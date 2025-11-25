@@ -27,6 +27,7 @@
   - [ ] playground
   - [ ] expo
   - [ ] go through branches and prs
+  - [ ] fix mobile builds
 - [x] neff.app deploy
 
 ## v1 foundation
@@ -46,13 +47,13 @@
 - [ ] eneff.com
   - [x] copy
   - [x] deploy
-  - [ ] update copy
+  - [x] update copy
 - [x] caltrain
   - [x] share lint
   - [x] share test
   - [x] share tsconfig
-  - [ ] share text font
-  - [ ] deploy
+  - [x] share text font
+  - [x] deploy
 - [x] learning
   - [x] copy
 - [x] discover
