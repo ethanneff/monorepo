@@ -39,7 +39,7 @@ const skills: Skill[] = [
 export const SkillsSection = ({ onRefSet }: SkillsSectionProperties) => {
   return (
     <section
-      className="min-h-screen py-20 sm:py-32 opacity-0"
+      className="min-h-screen py-20 sm:py-32"
       id="thoughts"
       ref={onRefSet}
     >

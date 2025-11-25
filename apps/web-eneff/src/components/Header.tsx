@@ -9,7 +9,7 @@ export const Header = ({ onRefSet }: HeaderProperties) => {
 
   return (
     <header
-      className="min-h-screen flex items-center opacity-0"
+      className="min-h-screen flex items-center"
       id="intro"
       ref={onRefSet}
     >

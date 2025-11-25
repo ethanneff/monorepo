@@ -12,7 +12,7 @@ import { SkillsSection } from '@/src/components/SkillsSection';
 const sections = ['intro', 'work', 'thoughts', 'connect'];
 
 const Home = () => {
-  const [activeSection, setActiveSection] = useState('');
+  const [activeSection, setActiveSection] = useState('intro');
   const sectionsReference = useRef<(HTMLElement | null)[]>([]);
 
   useEffect(() => {
@@ -20,7 +20,6 @@ const Home = () => {
       (entries) => {
         for (const entry of entries) {
           if (entry.isIntersecting) {
-            entry.target.classList.add('animate-fade-in-up');
             setActiveSection(entry.target.id);
           }
         }
@@ -29,8 +28,10 @@ const Home = () => {
     );
 
     for (const section of sectionsReference.current) {
-      // eslint-disable-next-line react-you-might-not-need-an-effect/no-initialize-state
-      if (section) observer.observe(section);
+      if (section) {
+        // eslint-disable-next-line react-you-might-not-need-an-effect/no-initialize-state
+        observer.observe(section);
+      }
     }
 
     return () => {

@@ -30,7 +30,7 @@ const socials = [
 export const ConnectSection = ({ onRefSet }: ConnectSectionProperties) => {
   return (
     <section
-      className="py-20 sm:py-32 opacity-0"
+      className="py-20 sm:py-32"
       id="connect"
       ref={onRefSet}
     >

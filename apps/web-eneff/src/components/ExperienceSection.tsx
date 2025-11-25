@@ -116,7 +116,7 @@ export const ExperienceSection = ({
 }: ExperienceSectionProperties) => {
   return (
     <section
-      className="min-h-screen py-20 sm:py-32 opacity-0"
+      className="min-h-screen py-20 sm:py-32"
       id="work"
       ref={onRefSet}
     >
