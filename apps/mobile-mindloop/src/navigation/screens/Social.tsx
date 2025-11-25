@@ -1,4 +1,5 @@
 import { Text, View } from '@shared/components';
+import { spacing } from '@shared/utils';
 
 export const SocialScreen = () => {
   return (
@@ -6,9 +7,16 @@ export const SocialScreen = () => {
       alignItems="center"
       flex={1}
       justifyContent="center"
+      padding={spacing.$24}
     >
-      <Text title="Social Screen" />
-      <Text title="This is where social features will be displayed" />
+      <Text
+        textAlign="center"
+        title="Social Screen"
+      />
+      <Text
+        textAlign="center"
+        title="This is where social features will be displayed"
+      />
     </View>
   );
 };

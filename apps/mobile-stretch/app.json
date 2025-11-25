@@ -4,10 +4,12 @@
       "adaptiveIcon": {
         "backgroundColor": "#ffffff",
         "foregroundImage": "src/assets/images/adaptive-icon.png"
-      }
+      },
+      "package": "com.ethanneff.mobile.stretch"
     },
     "icon": "src/assets/images/icon.png",
     "ios": {
+      "bundleIdentifier": "com.ethanneff.mobile.stretch",
       "supportsTablet": true
     },
     "name": "Stretch",

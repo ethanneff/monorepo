@@ -1,4 +1,5 @@
 import { Text, View } from '@shared/components';
+import { spacing } from '@shared/utils';
 
 export const ChallengesScreen = () => {
   return (
@@ -6,9 +7,16 @@ export const ChallengesScreen = () => {
       alignItems="center"
       flex={1}
       justifyContent="center"
+      padding={spacing.$24}
     >
-      <Text title="Challenges Screen" />
-      <Text title="This is where challenges will be displayed" />
+      <Text
+        textAlign="center"
+        title="Challenges Screen"
+      />
+      <Text
+        textAlign="center"
+        title="This is where challenges will be displayed"
+      />
     </View>
   );
 };

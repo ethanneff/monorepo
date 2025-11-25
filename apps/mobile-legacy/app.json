@@ -5,12 +5,12 @@
         "backgroundColor": "#ffffff",
         "foregroundImage": "src/assets/images/adaptive-icon.png"
       },
-      "package": "com.ethanneff.mobilelegacy"
+      "package": "com.ethanneff.mobile,legacy"
     },
     "icon": "src/assets/images/icon.png",
     "ios": {
-      "supportsTablet": true,
-      "bundleIdentifier": "com.ethanneff.mobilelegacy"
+      "bundleIdentifier": "com.ethanneff.mobile.legacy",
+      "supportsTablet": true
     },
     "name": "mobile-legacy",
     "newArchEnabled": true,
