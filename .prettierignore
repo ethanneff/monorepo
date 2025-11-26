@@ -2,9 +2,11 @@
 pnpm-lock.yaml
 package-lock.json
 yarn.lock
+Podfile.lock
 
 # Dependencies
 node_modules/
+Pods/
 
 # Build outputs
 .next/
@@ -12,24 +14,25 @@ dist/
 build/
 .turbo/
 .out/
+.expo/
+web-build/
+storybook-static/
+.vercel/
 *.tsbuildinfo
 
 # Cache
 .cache/
+.gradle/
 .metro-health-check*
 
-# Coverage
+# Coverage & Testing
 coverage/
 test-results/
 
 # Logs
 *.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-.pnpm-debug.log*
 
-# OS
+# OS files
 .DS_Store
 
 # Minified/bundled files
@@ -40,3 +43,8 @@ yarn-error.log*
 # Generated files
 expo-env.d.ts
 next-env.d.ts
+
+# Package manager
+patches/
+.yarn/
+.pnp.*
