@@ -14,7 +14,7 @@ if [ "$CI" = "true" ]; then
   madge --circular --extensions ts,tsx . && \
   git ls-files -co --exclude-standard -- '*.sh' | xargs -r shellcheck
 else
- # Local mode: fix issues
+  # Local mode: fix issues
   prettier --write --cache --log-level=error . && \
   sherif --fix && \
   knip && \
