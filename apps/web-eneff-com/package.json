@@ -23,5 +23,8 @@
     "start": "next start",
     "test": "./../../tooling/scripts/test.sh"
   },
-  "version": "0.0.0"
+  "version": "0.0.0",
+  "browserslist": [
+    "defaults"
+  ]
 }
