@@ -10,6 +10,25 @@ const nextConfig: NextConfig = {
     '@shared/utils',
   ],
 
+  // Configure compiler to target modern browsers
+  compiler: {
+    // Remove console logs in production
+    removeConsole:
+      process.env.NODE_ENV === 'production'
+        ? { exclude: ['error', 'warn'] }
+        : false,
+  },
+
+  experimental: {
+    // Use modern JavaScript output
+    optimizePackageImports: [
+      '@shared/components',
+      '@shared/features',
+      '@shared/store',
+      '@shared/utils',
+    ],
+  },
+
   webpack: (config, { webpack }) => {
     // Define React Native globals for web
     config.plugins.push(
