@@ -1,16 +1,19 @@
 {
+  "browserslist": [
+    "defaults"
+  ],
   "dependencies": {
     "@shared/components": "workspace:*",
     "@shared/features": "workspace:*",
-    "next": "15.5.6"
+    "next": "15.5.7"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "4.1.14",
+    "@tailwindcss/postcss": "4.1.17",
     "@tooling/eslint": "workspace:*",
     "@tooling/jest": "workspace:*",
     "@tooling/nextjs": "workspace:*",
     "@tooling/tsconfig": "workspace:*",
-    "tailwindcss": "4.1.14"
+    "tailwindcss": "4.1.17"
   },
   "name": "@apps/web-ethanneff-com",
   "private": true,
@@ -21,8 +24,5 @@
     "start": "next start",
     "test": "./../../tooling/scripts/test.sh"
   },
-  "version": "0.0.0",
-  "browserslist": [
-    "defaults"
-  ]
+  "version": "0.0.0"
 }
