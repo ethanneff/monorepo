@@ -16,6 +16,7 @@ module.exports = {
   setupFilesAfterEnv: [
     '<rootDir>/../../tooling/jest/src/react-native/jest.setup.js',
   ],
+  cacheDirectory: '<rootDir>/.cache/jest',
   coverageDirectory: '<rootDir>/.cache/jest',
   globals: {
     window: {},
