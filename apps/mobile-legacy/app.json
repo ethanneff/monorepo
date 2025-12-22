@@ -5,7 +5,7 @@
         "backgroundColor": "#ffffff",
         "foregroundImage": "src/assets/images/adaptive-icon.png"
       },
-      "package": "com.ethanneff.mobile,legacy"
+      "package": "com.ethanneff.mobile.legacy"
     },
     "icon": "src/assets/images/icon.png",
     "ios": {
@@ -23,7 +23,9 @@
           "backgroundColor": "#ffffff",
           "image": "src/assets/images/splash-icon.png"
         }
-      ]
+      ],
+      "expo-font",
+      "expo-web-browser"
     ],
     "scheme": "mobile-legacy",
     "slug": "mobile-legacy",
