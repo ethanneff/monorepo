@@ -6,6 +6,7 @@
     "lint": "turbo lint --parallel",
     "test": "turbo test --parallel",
     "clean": "./tooling/scripts/clean.sh",
+    "clean:all": "./tooling/scripts/clean.sh --all",
     "format": "./tooling/scripts/format.sh",
     "preinstall": "npx only-allow pnpm",
     "prepare": "husky"
