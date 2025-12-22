@@ -14,10 +14,12 @@
       "persistent": true
     },
     "lint": {
-      "dependsOn": ["^lint", "^build"]
+      "inputs": ["$TURBO_DEFAULT$"],
+      "outputs": [".cache/eslint", ".cache/tsconfig.tsbuildinfo"]
     },
     "test": {
-      "dependsOn": ["^test", "^build"]
+      "inputs": ["$TURBO_DEFAULT$"],
+      "outputs": [".cache/jest/**"]
     }
   },
   "ui": "tui"
