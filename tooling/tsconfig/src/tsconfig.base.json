@@ -9,6 +9,7 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "incremental": true,
+    "tsBuildInfoFile": ".cache/tsconfig.tsbuildinfo",
     "inlineSources": false,
     "isolatedModules": true,
     "lib": ["dom", "dom.iterable", "esnext"],
