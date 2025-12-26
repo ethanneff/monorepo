@@ -11,7 +11,7 @@
     "@shared/components": "workspace:*",
     "@shared/features": "workspace:*",
     "@shared/utils": "workspace:*",
-    "axios": "1.12.2",
+    "axios": "1.13.2",
     "expo": "54.0.30",
     "expo-asset": "12.0.12",
     "expo-blur": "15.0.8",
