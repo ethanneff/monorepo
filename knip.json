@@ -1,34 +1,15 @@
 {
   "ignore": [
-    "node_modules",
-    "dist",
-    "build",
-    "**/.turbo/*",
-    "**/.cache/*",
     "**/__tests__/*",
     "**/testing/**",
-    "**/metro.config.js",
     "**/eslint.config.mjs",
     "**/jest.*.js",
     "**/babel.config.js",
-    "**/*.ios.*",
-    "**/*.android.*",
     "**/*.web.*",
-    "**/next.config.ts",
     "**/postcss.config.mjs"
   ],
   "rules": {
     "binaries": "off",
-    "classMembers": "error",
-    "dependencies": "off",
-    "duplicates": "error",
-    "enumMembers": "error",
-    "exports": "error",
-    "files": "error",
-    "nsExports": "error",
-    "nsTypes": "error",
-    "types": "error",
-    "unlisted": "error",
-    "unresolved": "error"
+    "dependencies": "off"
   }
 }
