@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useState } from 'react';
 import { Animated } from 'react-native';
 import { useTheme } from '../Theme/useTheme';
 import { Touchable } from '../Touchable/Touchable';
@@ -22,7 +22,8 @@ export const Toggle = ({
   size = 16,
 }: Properties) => {
   const { colors, spacing } = useTheme();
-  const translateX = useRef(new Animated.Value(checked ? size : 0)).current;
+  // eslint-disable-next-line react/hook-use-state
+  const [translateX] = useState(() => new Animated.Value(checked ? size : 0));
 
   useEffect(() => {
     Animated.timing(translateX, {

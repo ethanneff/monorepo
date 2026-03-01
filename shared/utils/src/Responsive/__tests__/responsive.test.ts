@@ -4,6 +4,8 @@ import { responsive } from '../responsive';
 
 const mockDimensionsGet = jest.spyOn(Dimensions, 'get');
 
+const baseSize = 375;
+
 describe('responsive', () => {
   beforeEach(() => {
     jest.clearAllMocks();
@@ -27,21 +29,13 @@ describe('responsive', () => {
       expect(result).toBe(16);
     });
 
-    it('should work with different Base4 sizes', () => {
+    it('should work with different numeric sizes', () => {
       expect.assertions(5);
       expect(responsive(0)).toBe(0);
       expect(responsive(8)).toBe(8);
       expect(responsive(24)).toBe(24);
       expect(responsive(48)).toBe(48);
       expect(responsive(100)).toBe(100);
-    });
-
-    it('should handle custom factor parameter', () => {
-      expect.assertions(1);
-
-      const result = responsive(16, 0.5);
-
-      expect(result).toBe(16);
     });
   });
 
@@ -55,27 +49,20 @@ describe('responsive', () => {
       });
     });
 
-    it('should scale up responsive with default factor (0.25)', () => {
+    it('should scale up with scale = min(width/375, 2)', () => {
       expect.assertions(1);
 
+      // scale = min(750/375, 2) = 2
       const result = responsive(16);
 
-      expect(result).toBe(20);
+      expect(result).toBe(32);
     });
 
     it('should scale proportionally for different sizes', () => {
       expect.assertions(3);
-      expect(responsive(8)).toBe(10);
-      expect(responsive(24)).toBe(30);
-      expect(responsive(100)).toBe(125);
-    });
-
-    it('should apply custom factor correctly', () => {
-      expect.assertions(2);
-
-      expect(responsive(16, 0.5)).toBe(24);
-
-      expect(responsive(16, 1)).toBe(32);
+      expect(responsive(8)).toBe(16);
+      expect(responsive(24)).toBe(48);
+      expect(responsive(100)).toBe(200);
     });
   });
 
@@ -89,13 +76,13 @@ describe('responsive', () => {
       });
     });
 
-    it('should scale down responsive for smaller screens', () => {
+    it('should scale down for smaller screens', () => {
       expect.assertions(1);
 
       const result = responsive(16);
-      const expected = 16 * (1 + (320 / 375 - 1) * 0.25);
+      const scale = 320 / baseSize;
 
-      expect(result).toBeCloseTo(expected, 2);
+      expect(result).toBe(16 * scale);
     });
   });
 
@@ -128,13 +115,13 @@ describe('responsive', () => {
       });
     });
 
-    it('should scale appropriately for tablet sizes', () => {
+    it('should cap scale at maxScaleFactor for tablet sizes', () => {
       expect.assertions(1);
 
+      // scale = min(768/375, 2) = 2
       const result = responsive(16);
-      const expected = 16 * (1 + (768 / 375 - 1) * 0.25);
 
-      expect(result).toBeCloseTo(expected, 2);
+      expect(result).toBe(32);
     });
   });
 
@@ -153,30 +140,7 @@ describe('responsive', () => {
       expect(responsive(0)).toBe(0);
     });
 
-    it('should handle zero factor', () => {
-      expect.assertions(1);
-
-      const result = responsive(16, 0);
-
-      expect(result).toBe(16);
-    });
-
-    it('should handle negative factor (theoretical edge case)', () => {
-      expect.assertions(1);
-
-      mockDimensionsGet.mockReturnValue({
-        fontScale: 1,
-        height: 1334,
-        scale: 2,
-        width: 750,
-      });
-
-      const result = responsive(16, -0.25);
-
-      expect(result).toBe(12);
-    });
-
-    it('should handle very large sizes', () => {
+    it('should handle very large sizes at baseline', () => {
       expect.assertions(1);
       expect(responsive(1000)).toBe(1000);
     });
@@ -196,9 +160,9 @@ describe('responsive', () => {
       expect.assertions(1);
 
       const result = responsive(16);
-      const expected = 16 * (1 + (414 / 375 - 1) * 0.25);
+      const scale = 414 / baseSize;
 
-      expect(result).toBeCloseTo(expected, 10);
+      expect(result).toBeCloseTo(16 * scale, 10);
     });
   });
 });
