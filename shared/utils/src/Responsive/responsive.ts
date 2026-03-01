@@ -1,11 +1,16 @@
 import { Dimensions } from 'react-native';
-import { type Base4, smallestDimension } from './types';
+import { isServer, isWeb } from '../Environment/environment';
 
-export const responsive = (size: Base4, factor = 0.25) => {
+const baseSize = 375;
+const maxScaleFactor = 2;
+
+export const responsive = (value: number): number => {
+  // On server and web, return unscaled value so SSR and client hydration match.
+  if (isServer || isWeb) {
+    return value;
+  }
   const { height, width } = Dimensions.get('window');
-  const smallest = Math.min(width, height);
-  const diff = smallest / smallestDimension;
-  const scaledFactor = 1 + (diff - 1) * factor;
-
-  return scaledFactor * size;
+  const smallestDimension = Math.min(height, width);
+  const scale = Math.min(smallestDimension / baseSize, maxScaleFactor);
+  return value * scale;
 };
