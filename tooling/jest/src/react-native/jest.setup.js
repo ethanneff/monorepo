@@ -1,3 +1,29 @@
+// Provide React Native bridge globals so NativeModules/TurboModuleRegistry don't throw in Jest.
+// Must run before any react-native code loads (e.g. from @testing-library/react-native).
+// nativeModuleProxy: RN expects each module to have getConstants(); use a Proxy so any accessed module returns a mock.
+if (typeof global.nativeModuleProxy === 'undefined') {
+  const mockNativeModule = () => ({ getConstants: () => ({}) });
+  global.nativeModuleProxy = new Proxy(
+    {},
+    {
+      get(_, name) {
+        return mockNativeModule();
+      },
+    },
+  );
+}
+if (typeof global.__turboModuleProxy === 'undefined') {
+  const defaultDimensions = {
+    window: { width: 400, height: 800, scale: 1, fontScale: 1 },
+    screen: { width: 400, height: 800, scale: 1, fontScale: 1 },
+  };
+  const mockTurboModule = (name) =>
+    name === 'DeviceInfo'
+      ? { getConstants: () => ({ Dimensions: defaultDimensions }) }
+      : { getConstants: () => ({}) };
+  global.__turboModuleProxy = (name) => mockTurboModule(name);
+}
+
 import mockRNNetInfo from '@react-native-community/netinfo/jest/netinfo-mock.js';
 import mockRNDeviceInfo from 'react-native-device-info/jest/react-native-device-info-mock';
 
@@ -158,6 +184,18 @@ jest.mock('expo-crypto', () => ({
   digestStringAsync: jest.fn(),
   randomUUID: jest.fn(),
 }));
+
+// Mock react-native-mmkv (uses Nitro/native modules not available in Jest)
+jest.mock('react-native-mmkv', () => {
+  const storage = new Map();
+  return {
+    createMMKV: () => ({
+      getString: (name) => storage.get(name) ?? undefined,
+      set: (name, value) => storage.set(name, value),
+      remove: (name) => storage.delete(name),
+    }),
+  };
+});
 
 // Global cleanup to prevent Jest from hanging due to timers
 afterEach(() => {
