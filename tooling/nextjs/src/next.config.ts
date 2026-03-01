@@ -27,7 +27,6 @@ const nextConfig: NextConfig = {
       '@shared/utils',
     ],
   },
-  // Turbopack (Next 16 default): alias react-native to react-native-web, prefer .web files
   turbopack: {
     resolveAlias: {
       'react-native': 'react-native-web',
@@ -52,18 +51,6 @@ const nextConfig: NextConfig = {
         __DEV__: JSON.stringify(process.env.NODE_ENV !== 'production'),
       }),
     );
-    // Alias react-native (and all subpaths) to react-native-web for web builds
-    config.resolve.alias = {
-      ...config.resolve.alias,
-      'react-native': 'react-native-web',
-      'react-native/': 'react-native-web/',
-    };
-    // Add react-native-web extensions (prioritize .web files)
-    config.resolve.extensions = [
-      '.web.ts',
-      '.web.tsx',
-      ...config.resolve.extensions,
-    ];
     return config;
   },
 };
