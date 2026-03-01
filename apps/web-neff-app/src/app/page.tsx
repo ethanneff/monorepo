@@ -19,24 +19,24 @@ const INITIAL_BUBBLE_COUNT = 10;
 const CELL_SIZE = 300;
 
 const BubblePhysics = () => {
-  const canvasReference = useRef<HTMLCanvasElement>(null);
-  const contextReference = useRef<CanvasRenderingContext2D | null>(null);
-  const bubblesReference = useRef<Bubble[]>([]);
-  const nextIdReference = useRef(0);
-  const rafReference = useRef<number>(null);
-  const runningReference = useRef(true);
-  const dprReference = useRef(1);
-  const lastTsReference = useRef(0);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const contextRef = useRef<CanvasRenderingContext2D | null>(null);
+  const bubblesRef = useRef<Bubble[]>([]);
+  const nextIdRef = useRef(0);
+  const rafRef = useRef<number>(null);
+  const runningRef = useRef(true);
+  const dprRef = useRef(1);
+  const lastTsRef = useRef(0);
 
   // resize canvas to CSS size * DPR and scale context once
   const fitCanvas = () => {
-    const canvas = canvasReference.current;
-    const context = contextReference.current;
+    const canvas = canvasRef.current;
+    const context = contextRef.current;
     if (!canvas || !context) return;
 
     const rect = canvas.getBoundingClientRect();
     const dpr = Math.max(1, Math.floor(window.devicePixelRatio || 1));
-    dprReference.current = dpr;
+    dprRef.current = dpr;
 
     const w = Math.max(1, Math.floor(rect.width * dpr));
     const h = Math.max(1, Math.floor(rect.height * dpr));
@@ -51,11 +51,11 @@ const BubblePhysics = () => {
 
   // init
   useEffect(() => {
-    const canvas = canvasReference.current;
+    const canvas = canvasRef.current;
     if (!canvas) return;
     const context = canvas.getContext('2d');
     if (!context) return;
-    contextReference.current = context;
+    contextRef.current = context;
 
     // Make the canvas fill the viewport via CSS (Tailwind h-screen w-full)
     // Then fit to DPR-scaled backing store:
@@ -70,7 +70,7 @@ const BubblePhysics = () => {
       const r = 50 + Math.random() * 40;
       array.push({
         color: STROKE_COLOR,
-        id: nextIdReference.current++,
+        id: nextIdRef.current++,
         r,
         vx: (Math.random() - 0.5) * 4,
         vy: (Math.random() - 0.5) * 4,
@@ -78,7 +78,7 @@ const BubblePhysics = () => {
         y: r + Math.random() * (h - r * 2),
       });
     }
-    bubblesReference.current = array;
+    bubblesRef.current = array;
 
     // observe size changes
     const ro = new ResizeObserver(() => {
@@ -86,13 +86,13 @@ const BubblePhysics = () => {
     });
     ro.observe(canvas);
 
-    runningReference.current = true;
-    lastTsReference.current = performance.now();
+    runningRef.current = true;
+    lastTsRef.current = performance.now();
 
     const loop = (ts: number) => {
-      if (!runningReference.current) return;
-      const context2 = contextReference.current;
-      const canvasElement = canvasReference.current;
+      if (!runningRef.current) return;
+      const context2 = contextRef.current;
+      const canvasElement = canvasRef.current;
       if (!context2 || !canvasElement) return;
 
       const rect = canvasElement.getBoundingClientRect();
@@ -100,12 +100,12 @@ const BubblePhysics = () => {
       const { height } = rect;
 
       // time step (cap to 33ms for stability)
-      const dt = Math.min(33, ts - lastTsReference.current);
-      lastTsReference.current = ts;
+      const dt = Math.min(33, ts - lastTsRef.current);
+      lastTsRef.current = ts;
       // ~60Hz units
       const dts = dt / 16.6667;
 
-      stepPhysics(bubblesReference.current, width, height, dts);
+      stepPhysics(bubblesRef.current, width, height, dts);
 
       // draw
       context2.clearRect(0, 0, width, height);
@@ -113,33 +113,33 @@ const BubblePhysics = () => {
       context2.strokeStyle = STROKE_COLOR;
 
       context2.beginPath();
-      for (const b of bubblesReference.current) {
+      for (const b of bubblesRef.current) {
         context2.moveTo(b.x + b.r, b.y);
         context2.arc(b.x, b.y, b.r, 0, Math.PI * 2);
       }
       context2.stroke();
 
-      rafReference.current = requestAnimationFrame(loop);
+      rafRef.current = requestAnimationFrame(loop);
     };
 
-    rafReference.current = requestAnimationFrame(loop);
+    rafRef.current = requestAnimationFrame(loop);
 
     return () => {
-      runningReference.current = false;
-      if (rafReference.current) cancelAnimationFrame(rafReference.current);
+      runningRef.current = false;
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
       ro.disconnect();
     };
   }, []);
 
   // click to split (no React state)
   const onClick = useCallback((event: React.MouseEvent<HTMLCanvasElement>) => {
-    const canvas = canvasReference.current;
+    const canvas = canvasRef.current;
     if (!canvas) return;
     const rect = canvas.getBoundingClientRect();
     const x = event.clientX - rect.left;
     const y = event.clientY - rect.top;
 
-    const array = bubblesReference.current;
+    const array = bubblesRef.current;
     const index = array.findIndex((b) => {
       const dx = x - b.x;
       const dy = y - b.y;
@@ -157,7 +157,7 @@ const BubblePhysics = () => {
 
     const n1: Bubble = {
       color: b.color,
-      id: nextIdReference.current++,
+      id: nextIdRef.current++,
       r: newR,
       vx: b.vx + Math.cos(angle) * 2,
       vy: b.vy + Math.sin(angle) * 2,
@@ -166,7 +166,7 @@ const BubblePhysics = () => {
     };
     const n2: Bubble = {
       color: b.color,
-      id: nextIdReference.current++,
+      id: nextIdRef.current++,
       r: newR,
       vx: b.vx - Math.cos(angle) * 2,
       vy: b.vy - Math.sin(angle) * 2,
@@ -180,7 +180,7 @@ const BubblePhysics = () => {
       n1,
       n2,
     ];
-    bubblesReference.current = updated;
+    bubblesRef.current = updated;
   }, []);
 
   return (
@@ -188,7 +188,7 @@ const BubblePhysics = () => {
       <canvas
         className="block w-full h-full cursor-pointer"
         onClick={onClick}
-        ref={canvasReference}
+        ref={canvasRef}
       />
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <p className="text-2xl font-sans text-foreground/30 animate-pulse">
