@@ -20,7 +20,6 @@ const nextConfig: NextConfig = {
   },
 
   experimental: {
-    // Use modern JavaScript output
     optimizePackageImports: [
       '@shared/components',
       '@shared/features',
@@ -28,7 +27,24 @@ const nextConfig: NextConfig = {
       '@shared/utils',
     ],
   },
-  turbopack: {},
+  // Turbopack (Next 16 default): alias react-native to react-native-web, prefer .web files
+  turbopack: {
+    resolveAlias: {
+      'react-native': 'react-native-web',
+      'react-native/': 'react-native-web/',
+    },
+    resolveExtensions: [
+      '.web.ts',
+      '.web.tsx',
+      '.web.js',
+      '.web.jsx',
+      '.ts',
+      '.tsx',
+      '.js',
+      '.jsx',
+      '.json',
+    ],
+  },
   webpack: (config, { webpack }) => {
     // Define React Native globals for web
     config.plugins.push(
@@ -36,10 +52,11 @@ const nextConfig: NextConfig = {
         __DEV__: JSON.stringify(process.env.NODE_ENV !== 'production'),
       }),
     );
-    // Alias react-native to react-native-web
+    // Alias react-native (and all subpaths) to react-native-web for web builds
     config.resolve.alias = {
       ...config.resolve.alias,
-      'react-native$': 'react-native-web',
+      'react-native': 'react-native-web',
+      'react-native/': 'react-native-web/',
     };
     // Add react-native-web extensions (prioritize .web files)
     config.resolve.extensions = [
