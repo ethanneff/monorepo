@@ -1,6 +1,29 @@
 import mockRNNetInfo from '@react-native-community/netinfo/jest/netinfo-mock.js';
 import mockRNDeviceInfo from 'react-native-device-info/jest/react-native-device-info-mock';
 
+// Mock react-native-worklets first (required by react-native-reanimated)
+jest.mock('react-native-worklets', () => ({}));
+
+// Mock react-native-reanimated so components using Animated work in Jest
+jest.mock('react-native-reanimated', () => {
+  const View = require('react-native').View;
+  return {
+    __esModule: true,
+    default: View,
+    useAnimatedStyle: jest.fn(() => ({})),
+    useSharedValue: jest.fn((v) => ({ value: v })),
+    withSpring: jest.fn((v) => v),
+    withTiming: jest.fn((v) => v),
+    Easing: {},
+    runOnJS: jest.fn((fn) => fn),
+    FadeIn: View,
+    FadeOut: View,
+    LinearTransition: View,
+    SlideInRight: View,
+    SlideOutLeft: View,
+  };
+});
+
 // Mock react-native-gesture-handler
 jest.mock('react-native-gesture-handler', () => {
   const View = require('react-native/Libraries/Components/View/View');
