@@ -5,9 +5,11 @@
   "dependencies": {
     "@shared/components": "workspace:*",
     "@shared/features": "workspace:*",
-    "next": "15.5.7",
+    "@shared/store": "workspace:*",
+    "next": "16.1.6",
     "react": "19.2.4",
-    "react-dom": "19.2.4"
+    "react-dom": "19.2.4",
+    "react-native-web": "0.21.2"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "4.2.1",
