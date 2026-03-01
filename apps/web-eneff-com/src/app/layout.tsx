@@ -1,6 +1,6 @@
 import { Root } from '@shared/features';
-import { type Metadata } from 'next';
 import './globals.css';
+import { type Metadata } from 'next';
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const metadata: Metadata = {
