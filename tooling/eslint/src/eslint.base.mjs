@@ -77,6 +77,13 @@ const rules = {
     'jest/require-hook': 'off',
     'jest/no-hooks': 'off',
     'unicorn/no-array-sort': 'off', // not supported in react native
+    'unicorn/prevent-abbreviations': [
+      'error',
+      {
+        allowList: { Ref: true, ref: true, refs: true },
+        ignore: [/^ref$/i, /Ref$/],
+      },
+    ],
     // custom
     'no-restricted-imports': [
       'error',
@@ -134,7 +141,7 @@ const rules = {
         ],
       },
     ],
-    'perfectionist/sort-imports': ['error', { newlinesBetween: 'never' }],
+    'perfectionist/sort-imports': ['error', { newlinesBetween: 0 }],
     'react/function-component-definition': [
       'error',
       {
@@ -195,8 +202,8 @@ export default defineConfig(
   reactPlugin.configs['recommended-type-checked'], // https://github.com/Rel1cx/eslint-react
   reactRefresh.configs['recommended'], // https://github.com/ArnaudBarre/eslint-plugin-react-refresh
   useEffect.configs.recommended, // https://github.com/NickvanDyke/eslint-plugin-react-you-might-not-need-an-effect
-  nextPlugin.flatConfig.recommended, // https://nextjs.org/docs/app/api-reference/config/eslint
-  nextPlugin.flatConfig.coreWebVitals, // https://nextjs.org/docs/app/api-reference/config/eslint
+  nextPlugin.configs.recommended, // https://nextjs.org/docs/app/api-reference/config/eslint
+  nextPlugin.configs['core-web-vitals'], // https://nextjs.org/docs/app/api-reference/config/eslint
   // plugins
   reactQuery.configs['flat/recommended'], // https://tanstack.com/query/latest/docs/eslint/eslint-plugin-query
   sonarjs.configs['recommended'], // https://github.com/SonarSource/SonarJS
