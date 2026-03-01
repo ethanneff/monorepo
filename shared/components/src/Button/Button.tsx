@@ -28,7 +28,7 @@ export const Button = ({
   loading,
   onPress,
   title,
-  variant = 'primary',
+  variant,
 }: Properties) => {
   const { colors, spacing } = useTheme();
   const [isPressed, setIsPressed] = useState(false);

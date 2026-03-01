@@ -40,7 +40,7 @@ export const AccordionItem = ({
   collapsible = true,
   title,
   value,
-  withDivider = false,
+  withDivider,
 }: AccordionItemProperties) => {
   const { spacing } = useTheme();
   const context = use(AccordionContext);

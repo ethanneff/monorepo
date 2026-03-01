@@ -16,7 +16,7 @@ type DotProperties = {
   readonly size: number;
 };
 
-const Dot = ({ color, size = 16 }: DotProperties) => {
+const Dot = ({ color, size }: DotProperties) => {
   const { colors } = useTheme();
   return (
     <View
@@ -39,7 +39,7 @@ type LoaderProperties = {
 // eslint-disable-next-line react/no-multi-comp
 export const Loader = ({
   absoluteFillObject,
-  color = 'primary',
+  color,
   duration = 1500,
   size = 8,
   visible,

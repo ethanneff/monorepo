@@ -23,10 +23,10 @@ type SliderProperties = {
 };
 
 export const Slider = ({
-  max = 1,
-  min = 0,
+  max,
+  min,
   onChange,
-  step = 1,
+  step,
   value,
 }: SliderProperties) => {
   const { colors, spacing } = useTheme();

@@ -13,7 +13,7 @@ const sections = ['intro', 'work', 'thoughts', 'connect'];
 
 const Home = () => {
   const [activeSection, setActiveSection] = useState('intro');
-  const sectionsReference = useRef<(HTMLElement | null)[]>([]);
+  const sectionsRef = useRef<(HTMLElement | null)[]>([]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -27,7 +27,7 @@ const Home = () => {
       { rootMargin: '0px 0px -20% 0px', threshold: 0.3 },
     );
 
-    for (const section of sectionsReference.current) {
+    for (const section of sectionsRef.current) {
       if (section) {
         // eslint-disable-next-line react-you-might-not-need-an-effect/no-initialize-state
         observer.observe(section);
@@ -41,7 +41,7 @@ const Home = () => {
 
   const handleReferenceSet = useCallback(
     (index: number) => (element: HTMLElement | null) => {
-      sectionsReference.current[index] = element;
+      sectionsRef.current[index] = element;
     },
     [],
   );

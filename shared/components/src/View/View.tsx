@@ -29,7 +29,7 @@ export const View = ({
   style,
   ...rest
 }: ViewProperties) => {
-  const absolute = absoluteFillObject ? StyleSheet.absoluteFillObject : {};
+  const absolute = absoluteFillObject ? StyleSheet.absoluteFill : {};
   const dropShadowStyle = useDropShadow(hasDropShadow);
   const styles = StyleSheet.create({
     view: { ...absolute, ...dropShadowStyle, ...rest },

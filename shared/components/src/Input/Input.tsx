@@ -55,7 +55,7 @@ export const Input = ({
   autoCapitalize,
   autoComplete,
   autoCorrect,
-  defaultValue = '',
+  defaultValue,
   editable,
   error = '',
   keyboardType,
@@ -70,7 +70,7 @@ export const Input = ({
   submitBehavior,
   textContentType,
 }: Properties) => {
-  const inputReference = useRef<TextInput>(null);
+  const inputRef = useRef<TextInput>(null);
   const [value, setValue] = useState(defaultValue);
   const [isSecureTextEntry, setIsSecureTextEntry] = useState(secureTextEntry);
   const { colors, spacing } = useTheme();
@@ -90,16 +90,16 @@ export const Input = ({
     }
     setValue('');
     onChangeText('');
-    inputReference.current?.focus();
+    inputRef.current?.focus();
   }, [onChangeText, secureTextEntry, isSecureTextEntry]);
 
   const handleLabelPress = useCallback(() => {
-    inputReference.current?.focus();
+    inputRef.current?.focus();
   }, []);
 
   const handleReference = useCallback(
     (node: null | TextInput) => {
-      inputReference.current = node;
+      inputRef.current = node;
       if (typeof ref === 'function') {
         ref(node);
       } else if (ref) {

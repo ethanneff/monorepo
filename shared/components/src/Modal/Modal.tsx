@@ -18,7 +18,7 @@ export const Modal = ({ children, onBackdropPress }: Properties) => {
 
   return (
     <RNModal
-      style={{ ...StyleSheet.absoluteFillObject }}
+      style={{ ...StyleSheet.absoluteFill }}
       transparent
     >
       <TouchableWithoutFeedback onPress={onBackdropPress}>
