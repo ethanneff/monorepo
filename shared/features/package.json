@@ -1,13 +1,14 @@
 {
   "dependencies": {
+    "@react-navigation/native": "7.1.31",
     "@shared/components": "workspace:*",
     "@shared/store": "workspace:*",
     "@shared/utils": "workspace:*",
     "@vercel/analytics": "1.5.0",
     "@vercel/speed-insights": "1.2.0",
     "next": "15.5.7",
-    "react": "19.1.0",
-    "react-dom": "19.1.0",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
     "react-native-web": "0.21.2"
   },
   "devDependencies": {

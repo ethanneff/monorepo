@@ -8,12 +8,12 @@
     "next": "15.5.7"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "4.1.17",
+    "@tailwindcss/postcss": "4.2.1",
     "@tooling/eslint": "workspace:*",
     "@tooling/jest": "workspace:*",
     "@tooling/nextjs": "workspace:*",
     "@tooling/tsconfig": "workspace:*",
-    "tailwindcss": "4.1.17"
+    "tailwindcss": "4.2.1"
   },
   "name": "@apps/web-eneff-io",
   "private": true,

@@ -12,19 +12,20 @@
     "prepare": "husky"
   },
   "devDependencies": {
+    "baseline-browser-mapping": "2.10.0",
     "husky": "9.1.7",
-    "knip": "5.78.0",
+    "knip": "5.85.0",
     "madge": "8.0.0",
     "only-allow": "1.2.2",
-    "prettier": "3.7.4",
+    "prettier": "3.8.1",
     "shellcheck": "4.1.0",
-    "sherif": "1.9.0",
-    "turbo": "2.7.2"
+    "sherif": "1.10.0",
+    "turbo": "2.8.12"
   },
-  "packageManager": "pnpm@10.26.2",
+  "packageManager": "pnpm@10.30.3",
   "name": "@shared/monorepo",
   "engines": {
     "node": "22",
-    "pnpm": "10.26.2"
+    "pnpm": "10.30.3"
   }
 }

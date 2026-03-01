@@ -6,16 +6,16 @@
     "@shared/components": "workspace:*",
     "@shared/features": "workspace:*",
     "next": "15.5.7",
-    "react": "19.1.0",
-    "react-dom": "19.1.0"
+    "react": "19.2.4",
+    "react-dom": "19.2.4"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "4.1.17",
+    "@tailwindcss/postcss": "4.2.1",
     "@tooling/eslint": "workspace:*",
     "@tooling/jest": "workspace:*",
     "@tooling/nextjs": "workspace:*",
     "@tooling/tsconfig": "workspace:*",
-    "tailwindcss": "4.1.17"
+    "tailwindcss": "4.2.1"
   },
   "name": "@apps/web-neff-app",
   "private": true,
