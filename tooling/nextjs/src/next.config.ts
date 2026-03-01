@@ -28,7 +28,7 @@ const nextConfig: NextConfig = {
       '@shared/utils',
     ],
   },
-
+  turbopack: {},
   webpack: (config, { webpack }) => {
     // Define React Native globals for web
     config.plugins.push(
