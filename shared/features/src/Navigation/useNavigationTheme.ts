@@ -1,3 +1,5 @@
+'use client';
+
 import { DefaultTheme, type Theme } from '@react-navigation/native';
 import { useStore } from '@shared/store/src/useStore';
 import { colors } from '@shared/utils';
