@@ -5,7 +5,7 @@
   "dependencies": {
     "@shared/components": "workspace:*",
     "@shared/features": "workspace:*",
-    "next": "15.5.7"
+    "next": "15.5.10"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "4.2.1",
