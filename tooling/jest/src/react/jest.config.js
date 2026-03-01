@@ -12,6 +12,7 @@ function createNextJestConfig(appDir, customConfig = {}) {
   });
 
   const defaultConfig = {
+    cacheDirectory: '<rootDir>/.cache/jest',
     setupFilesAfterEnv: [
       '<rootDir>/../../tooling/jest/src/react/jest.setup.js',
     ],
