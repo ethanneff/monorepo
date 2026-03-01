@@ -17,6 +17,7 @@ const initialState: State = {
 type Actions = {
   incrementAppOpenCount: () => void;
   setTheme: (theme: State['theme']) => void;
+  toggleTheme: () => void;
 };
 
 export const sliceApplication: Slice<SliceApplication> = (
@@ -32,6 +33,12 @@ export const sliceApplication: Slice<SliceApplication> = (
     setTheme: (theme) => {
       set((state) => {
         state.application.theme = theme;
+      });
+    },
+    toggleTheme: () => {
+      set((state) => {
+        state.application.theme =
+          state.application.theme === 'dark' ? 'light' : 'dark';
       });
     },
   },

@@ -8,6 +8,7 @@ export const getMockStore = () => {
       actions: {
         incrementAppOpenCount: jest.fn(),
         setTheme: jest.fn(),
+        toggleTheme: jest.fn(),
       },
       appOpenCount: 0,
       theme: 'light',
