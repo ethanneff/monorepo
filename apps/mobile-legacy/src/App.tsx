@@ -1,5 +1,7 @@
+import { useNavigationTheme } from '@shared/features';
 import { Navigation } from './navigation';
 
 export const App = () => {
-  return <Navigation />;
+  const theme = useNavigationTheme();
+  return <Navigation theme={theme} />;
 };
