@@ -6,6 +6,7 @@ import {
   Geist_Mono as geistFontMono,
   Geist as geistFontSans,
 } from 'next/font/google';
+import { type PropsWithChildren } from 'react';
 
 const geistSans = geistFontSans({
   subsets: ['latin'],
@@ -17,11 +18,7 @@ const geistMono = geistFontMono({
   variable: '--font-geist-mono',
 });
 
-export const Root = ({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) => {
+export const Root = ({ children }: PropsWithChildren) => {
   return (
     <html
       className="dark"
