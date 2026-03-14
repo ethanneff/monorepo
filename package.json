@@ -10,6 +10,7 @@
     "clean:all": "./tooling/scripts/clean.sh --all",
     "format": "./tooling/scripts/format.sh",
     "preinstall": "npx only-allow pnpm",
+    "postinstall": "pnpm dedupe",
     "prepare": "husky"
   },
   "devDependencies": {
