@@ -502,37 +502,6 @@ importers:
         specifier: 4.2.1
         version: 4.2.1
 
-  apps/web-eneff-io:
-    dependencies:
-      '@shared/components':
-        specifier: workspace:*
-        version: link:../../shared/components
-      '@shared/features':
-        specifier: workspace:*
-        version: link:../../shared/features
-      next:
-        specifier: 16.1.6
-        version: 16.1.6(@babel/core@7.28.4)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
-    devDependencies:
-      '@tailwindcss/postcss':
-        specifier: 4.2.1
-        version: 4.2.1
-      '@tooling/eslint':
-        specifier: workspace:*
-        version: link:../../tooling/eslint
-      '@tooling/jest':
-        specifier: workspace:*
-        version: link:../../tooling/jest
-      '@tooling/nextjs':
-        specifier: workspace:*
-        version: link:../../tooling/nextjs
-      '@tooling/tsconfig':
-        specifier: workspace:*
-        version: link:../../tooling/tsconfig
-      tailwindcss:
-        specifier: 4.2.1
-        version: 4.2.1
-
   apps/web-ethanneff-com:
     dependencies:
       '@shared/components':
