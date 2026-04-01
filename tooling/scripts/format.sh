@@ -9,15 +9,21 @@ set -e
 if [ "$CI" = "true" ]; then
   # CI mode: check only
   prettier --check --ignore-unknown --log-level=error . && \
+  knip && \
   sherif && \
-  knip && \
+  syncpack lint && \
+  manypkg check && \
   madge --circular --extensions ts,tsx . && \
-  git ls-files -co --exclude-standard -- '*.sh' | xargs -r shellcheck
+  git ls-files -co --exclude-standard -- '*.sh' | xargs -r pnpm exec shellcheck && \
+  pnpm dedupe --check
 else
-  # Local mode: fix issues
+ # Local mode: fix issues
   prettier --write --cache --log-level=error . && \
-  sherif --fix && \
   knip && \
+  sherif --fix && \
+  syncpack fix && \
+  manypkg fix && \
   madge --circular --extensions ts,tsx . && \
-  git ls-files -co --exclude-standard -- '*.sh' | xargs -r shellcheck
+  git ls-files -co --exclude-standard -- '*.sh' | xargs -r pnpm exec shellcheck && \
+  pnpm dedupe
 fi 

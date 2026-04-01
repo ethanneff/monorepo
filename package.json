@@ -1,18 +1,4 @@
 {
-  "private": true,
-  "version": "0.0.0",
-  "scripts": {
-    "dev": "turbo dev",
-    "build": "turbo build",
-    "lint": "turbo lint --parallel",
-    "test": "turbo test --parallel",
-    "clean": "./tooling/scripts/clean.sh",
-    "clean:all": "./tooling/scripts/clean.sh --all",
-    "format": "./tooling/scripts/format.sh",
-    "preinstall": "npx only-allow pnpm",
-    "postinstall": "pnpm dedupe",
-    "prepare": "husky"
-  },
   "devDependencies": {
     "baseline-browser-mapping": "2.10.0",
     "husky": "9.1.7",
@@ -24,10 +10,23 @@
     "sherif": "1.10.0",
     "turbo": "2.8.12"
   },
-  "packageManager": "pnpm@10.30.3",
-  "name": "@shared/monorepo",
   "engines": {
     "node": "24",
     "pnpm": "10.30.3"
-  }
+  },
+  "name": "@shared/monorepo",
+  "packageManager": "pnpm@10.30.3",
+  "private": true,
+  "scripts": {
+    "build": "turbo build",
+    "clean": "./tooling/scripts/clean.sh",
+    "clean:all": "./tooling/scripts/clean.sh --all",
+    "dev": "turbo dev",
+    "format": "./tooling/scripts/format.sh",
+    "lint": "turbo lint --parallel",
+    "preinstall": "npx only-allow pnpm",
+    "prepare": "husky",
+    "test": "turbo test --parallel"
+  },
+  "version": "0.0.0"
 }
