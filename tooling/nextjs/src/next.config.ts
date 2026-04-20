@@ -1,6 +1,8 @@
 import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
+  reactStrictMode: true,
+
   // Transpile react-native-web and shared packages
   transpilePackages: [
     'react-native-web',
