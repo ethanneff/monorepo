@@ -1,5 +1,7 @@
 import { Pill } from '@/src/components/Pill';
 
+const currentYear = new Date().getFullYear();
+
 type HeaderProperties = {
   readonly onRefSet: (element: HTMLElement | null) => void;
 };
@@ -17,7 +19,7 @@ export const Header = ({ onRefSet }: HeaderProperties) => {
         <div className="lg:col-span-3 space-y-6 sm:space-y-8">
           <div className="space-y-3 sm:space-y-2">
             <div className="text-sm text-muted-foreground font-mono tracking-wider">
-              PORTFOLIO / {new Date().getFullYear()}
+              PORTFOLIO / {currentYear}
             </div>
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-light tracking-tight">
               Ethan Neff

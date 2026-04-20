@@ -1,4 +1,5 @@
 import comments from '@eslint-community/eslint-plugin-eslint-comments/configs';
+import { fixupConfigRules } from '@eslint/compat';
 import reactPlugin from '@eslint-react/eslint-plugin';
 import eslint from '@eslint/js';
 import nextPlugin from '@next/eslint-plugin-next';
@@ -195,9 +196,11 @@ export default defineConfig(
   // testing
   jest.configs['flat/all'], // https://github.com/jest-community/eslint-plugin-jest
   testingLibrary.configs['flat/react'], // https://github.com/testing-library/eslint-plugin-testing-library
-  // react
-  react.configs.flat['all'],
-  react.configs.flat['jsx-runtime'], // https://github.com/jsx-eslint/eslint-plugin-react
+  // react (fixupConfigRules: eslint-plugin-react rules expect legacy context.getSourceCode on ESLint 10)
+  ...fixupConfigRules([
+    react.configs.flat['all'],
+    react.configs.flat['jsx-runtime'], // https://github.com/jsx-eslint/eslint-plugin-react
+  ]),
   reactHooks.configs.flat.recommended, // https://github.com/facebook/react/tree/main/packages/eslint-plugin-react-hooks
   reactPlugin.configs['recommended-type-checked'], // https://github.com/Rel1cx/eslint-react
   reactRefresh.configs['recommended'], // https://github.com/ArnaudBarre/eslint-plugin-react-refresh

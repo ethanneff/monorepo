@@ -12,6 +12,9 @@ type Experience = {
 type ExperienceSectionProperties = {
   readonly onRefSet: (element: HTMLElement | null) => void;
 };
+
+const currentYear = new Date().getFullYear();
+
 const experiences: Experience[] = [
   {
     achievements: [
@@ -124,7 +127,7 @@ export const ExperienceSection = ({
         <div className="flex flex-row justify-between items-center gap-4">
           <h2 className="text-3xl sm:text-4xl font-light">Experience</h2>
           <div className="text-sm text-muted-foreground font-mono">
-            {new Date().getFullYear() - 2012} years
+            {currentYear - 2012} years
           </div>
         </div>
 

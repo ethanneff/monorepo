@@ -1,6 +1,8 @@
 import { useCallback, useState } from 'react';
 import { ThemeToggle } from './ThemeToggle';
 
+const currentYear = new Date().getFullYear();
+
 export const Footer = () => {
   const [isDark, setIsDark] = useState(true);
 
@@ -16,7 +18,7 @@ export const Footer = () => {
       <div className="flex flex-row justify-between items-start items-center gap-6 sm:gap-8">
         <div className="space-y-2">
           <div className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Ethan Neff. All rights reserved.
+            © {currentYear} Ethan Neff. All rights reserved.
           </div>
         </div>
         <div className="flex items-center gap-4">
