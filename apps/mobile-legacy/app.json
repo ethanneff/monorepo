@@ -1,5 +1,8 @@
 {
   "expo": {
+    "experiments": {
+      "reactCompiler": true
+    },
     "android": {
       "adaptiveIcon": {
         "backgroundColor": "#ffffff",
