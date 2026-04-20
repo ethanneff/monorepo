@@ -13,7 +13,6 @@
       "supportsTablet": true
     },
     "name": "Stretch",
-    "newArchEnabled": true,
     "orientation": "portrait",
     "plugins": [
       "expo-asset",

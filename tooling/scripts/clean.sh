@@ -25,7 +25,9 @@ find . -type d \( \
 if [ "$CLEAN_ALL" = "true" ]; then
   # Then remove node_modules and Pods if --all flag is passed
   find . -type d \( \
-      -name 'Pods' -o \
-      -name 'node_modules' \
+      -name 'node_modules' -o \
+      -name 'ios' -o \
+      -name 'android' \
   \) -prune -exec rm -rf {} +
+  pnpm install
 fi
