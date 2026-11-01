@@ -4,14 +4,14 @@ import { Text } from '../../Text/Text';
 import { Placeholder } from '../Placeholder';
 
 describe('placeholder', () => {
-  it('renders with title', () => {
-    render(<Placeholder title="Test Title" />);
+  it('renders with title', async () => {
+    await render(<Placeholder title="Test Title" />);
 
     expect(screen.getByText('Test Title')).toBeTruthy();
   });
 
-  it('renders with title and children', () => {
-    render(
+  it('renders with title and children', async () => {
+    await render(
       <Placeholder title="Test Title">
         <Text title="Child Content" />
       </Placeholder>,

@@ -4,10 +4,10 @@ import { Hero } from '../Hero';
 
 describe('hero', () => {
   describe('basic rendering', () => {
-    it('should render hero text content', () => {
+    it('should render hero text content', async () => {
       expect.assertions(1);
 
-      render(<Hero />);
+      await render(<Hero />);
 
       expect(screen.getByText('Hero')).toBeTruthy();
     });

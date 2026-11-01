@@ -5,15 +5,15 @@
   "dependencies": {
     "@shared/components": "workspace:*",
     "@shared/features": "workspace:*",
-    "next": "16.2.4"
+    "next": "16.4.3"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "4.2.2",
+    "@tailwindcss/postcss": "4.3.3",
     "@tooling/eslint": "workspace:*",
     "@tooling/jest": "workspace:*",
     "@tooling/nextjs": "workspace:*",
     "@tooling/tsconfig": "workspace:*",
-    "tailwindcss": "4.2.2"
+    "tailwindcss": "4.3.3"
   },
   "name": "@apps/web-ethanneff-com",
   "private": true,

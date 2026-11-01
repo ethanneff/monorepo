@@ -10,7 +10,6 @@ type Properties = {
   readonly color?: ColorName;
   readonly ellipsizeMode?: TextProps['ellipsizeMode'];
   readonly fontFamily?: FontFamily;
-  readonly lineBreakMode?: TextProps['lineBreakMode'];
   readonly numberOfLines?: TextProps['numberOfLines'];
   readonly selectable?: boolean;
   readonly style?: TextStyle;
@@ -28,7 +27,6 @@ export const Text = ({
   color = 'foreground',
   ellipsizeMode,
   fontFamily,
-  lineBreakMode,
   numberOfLines,
   selectable = false,
   style,
@@ -48,7 +46,6 @@ export const Text = ({
       accessible={accessible}
       allowFontScaling={false}
       ellipsizeMode={ellipsizeMode}
-      lineBreakMode={lineBreakMode}
       numberOfLines={numberOfLines}
       selectable={selectable}
       style={{

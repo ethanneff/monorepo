@@ -78,13 +78,18 @@ const rules = {
     'jest/require-hook': 'off',
     'jest/no-hooks': 'off',
     'unicorn/no-array-sort': 'off', // not supported in react native
-    'unicorn/prevent-abbreviations': [
+    'unicorn/name-replacements': [
       'error',
       {
         allowList: { Ref: true, ref: true, refs: true },
         ignore: [/^ref$/i, /Ref$/],
+        replacements: { application: false, applications: false }, // keep full words
       },
     ],
+    'unicorn/consistent-boolean-name': 'off', // flags boolean-returning functions and params
+    'unicorn/default-export-style': 'off', // define components first, then export default
+    'unicorn/max-nested-calls': 'off', // zustand middleware composition
+    'unicorn/single-line-block-comment-style': 'off', // keep single-line jsdoc
     // custom
     'no-restricted-imports': [
       'error',

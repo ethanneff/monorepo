@@ -3,10 +3,10 @@ import { render, screen } from '@testing-library/react-native';
 import { HomeScreen } from '../Home';
 
 describe('homeScreen', () => {
-  it('should render', () => {
+  it('should render', async () => {
     expect.assertions(1);
 
-    render(<HomeScreen />);
+    await render(<HomeScreen />);
 
     expect(
       screen.getByText(

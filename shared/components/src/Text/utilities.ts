@@ -23,12 +23,7 @@ export type Variant =
   | 'xsmall';
 
 type TextLetterSpacing =
-  | 'normal'
-  | 'tight'
-  | 'tighter'
-  | 'wide'
-  | 'wider'
-  | 'widest';
+  'normal' | 'tight' | 'tighter' | 'wide' | 'wider' | 'widest';
 
 type TextSize =
   | '2xl'
@@ -46,12 +41,7 @@ type TextSize =
   | 'xs';
 
 type TextWeight =
-  | 'bold'
-  | 'extrabold'
-  | 'light'
-  | 'medium'
-  | 'regular'
-  | 'semibold';
+  'bold' | 'extrabold' | 'light' | 'medium' | 'regular' | 'semibold';
 
 export const textSize: Record<
   TextSize,

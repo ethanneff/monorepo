@@ -4,6 +4,7 @@ import { useCallback, useRef, useState } from 'react';
 import {
   // eslint-disable-next-line no-restricted-imports
   TextInput,
+  type TextInputInstance,
   type TextInputProps,
 } from 'react-native';
 import { Icon, type IconName } from '../Icon/Icon';
@@ -12,7 +13,7 @@ import { useTheme } from '../Theme/useTheme';
 import { Touchable } from '../Touchable/Touchable';
 import { View } from '../View/View';
 
-export type InputReference = TextInput;
+export type InputReference = TextInputInstance;
 
 type Properties = RequiredTextInputProperties &
   TextInputProps & {
@@ -43,8 +44,7 @@ const getIcon = (
   hasValue: boolean,
   secureTextEntry: boolean | undefined,
 ): IconName => {
-  if (!hasValue) return 'close';
-  if (secureTextEntry === undefined) return 'close';
+  if (!hasValue || secureTextEntry === undefined) return 'close';
   if (secureTextEntry) return 'eye';
   return 'eye-off';
 };
@@ -70,7 +70,7 @@ export const Input = ({
   submitBehavior,
   textContentType,
 }: Properties) => {
-  const inputRef = useRef<TextInput>(null);
+  const inputRef = useRef<InputReference>(null);
   const [value, setValue] = useState(defaultValue);
   const [isSecureTextEntry, setIsSecureTextEntry] = useState(secureTextEntry);
   const { colors, spacing } = useTheme();
@@ -98,7 +98,7 @@ export const Input = ({
   }, []);
 
   const handleReference = useCallback(
-    (node: null | TextInput) => {
+    (node: InputReference | null) => {
       inputRef.current = node;
       if (typeof ref === 'function') {
         ref(node);

@@ -3,10 +3,13 @@ import {
   Pressable,
   // eslint-disable-next-line no-restricted-imports
   TouchableOpacity as RNTouchableOpacity,
+  type StyleProp,
   type TouchableOpacityProps,
+  type ViewStyle,
 } from 'react-native';
 
-type Properties = TouchableOpacityProps & {
+type Properties = Omit<TouchableOpacityProps, 'style'> & {
+  readonly style?: StyleProp<ViewStyle>;
   readonly withoutFeedback?: boolean;
 };
 
