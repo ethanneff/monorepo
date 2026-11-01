@@ -3,10 +3,10 @@ import { render, screen } from '@testing-library/react-native';
 import { MapScreen } from '../Map';
 
 describe('mapScreen', () => {
-  it('should render', () => {
+  it('should render', async () => {
     expect.assertions(1);
 
-    render(<MapScreen />);
+    await render(<MapScreen />);
 
     expect(screen.getByText('Map Screen')).toBeTruthy();
   });

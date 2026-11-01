@@ -29,7 +29,6 @@ const Home = () => {
 
     for (const section of sectionsRef.current) {
       if (section) {
-        // eslint-disable-next-line react-you-might-not-need-an-effect/no-initialize-state
         observer.observe(section);
       }
     }

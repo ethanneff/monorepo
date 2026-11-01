@@ -41,12 +41,14 @@ const BubblePhysics = () => {
     const w = Math.max(1, Math.floor(rect.width * dpr));
     const h = Math.max(1, Math.floor(rect.height * dpr));
 
-    if (canvas.width !== w || canvas.height !== h) {
-      canvas.width = w;
-      canvas.height = h;
-      context.setTransform(1, 0, 0, 1, 0, 0);
-      context.scale(dpr, dpr);
+    if (canvas.width === w && canvas.height === h) {
+      return;
     }
+
+    canvas.width = w;
+    canvas.height = h;
+    context.setTransform(1, 0, 0, 1, 0, 0);
+    context.scale(dpr, dpr);
   };
 
   // init
@@ -95,9 +97,7 @@ const BubblePhysics = () => {
       const canvasElement = canvasRef.current;
       if (!context2 || !canvasElement) return;
 
-      const rect = canvasElement.getBoundingClientRect();
-      const { width } = rect;
-      const { height } = rect;
+      const { height, width } = canvasElement.getBoundingClientRect();
 
       // time step (cap to 33ms for stability)
       const dt = Math.min(33, ts - lastTsRef.current);
@@ -216,14 +216,14 @@ const stepPhysics = (
     b.x += b.vx * dt;
     b.y += b.vy * dt;
 
-    if (b.x - b.r < 0) {
+    if (b.x < b.r) {
       b.x = b.r;
       b.vx = -b.vx;
     } else if (b.x + b.r > width) {
       b.x = width - b.r;
       b.vx = -b.vx;
     }
-    if (b.y - b.r < 0) {
+    if (b.y < b.r) {
       b.y = b.r;
       b.vy = -b.vy;
     } else if (b.y + b.r > height) {
@@ -329,8 +329,8 @@ const stepPhysics = (
     }
   };
 
-  for (const [key, indices] of grid.entries()) {
-    const [cxString, cyString] = key.split(',');
+  for (const [key, indices] of grid) {
+    const [cxString, cyString] = key.split(',', 2);
     const cx = Number(cxString);
     const cy = Number(cyString);
 

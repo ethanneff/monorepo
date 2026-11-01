@@ -1,7 +1,11 @@
-/* eslint-disable new-cap */
 import { useCallback } from 'react';
 import { Dimensions } from 'react-native';
-import { Gesture, GestureDetector } from 'react-native-gesture-handler';
+import {
+  GestureDetector,
+  useCompetingGestures,
+  usePanGesture,
+  useTapGesture,
+} from 'react-native-gesture-handler';
 import Animated, {
   useAnimatedStyle,
   useSharedValue,
@@ -42,36 +46,39 @@ export const Slider = ({
     [onChange],
   );
 
-  const pan = Gesture.Pan()
-    .onBegin(() => {
+  const pan = usePanGesture({
+    onBegin: () => {
       context.value = translateX.value;
-    })
-    .onUpdate((event) => {
-      translateX.value = Math.min(
-        Math.max(0, context.value + event.translationX),
-        SLIDER_WIDTH - KNOB_SIZE,
-      );
-    })
-    .onEnd(() => {
+    },
+    onDeactivate: () => {
       const percent = translateX.value / (SLIDER_WIDTH - KNOB_SIZE);
       let newValue = min + percent * (max - min);
       newValue = Math.round(newValue / step) * step;
       onGestureEnd(newValue);
-    });
-
-  const tap = Gesture.Tap().onEnd((event) => {
-    const newX = Math.min(
-      Math.max(0, event.x - KNOB_SIZE / 2),
-      SLIDER_WIDTH - KNOB_SIZE,
-    );
-    translateX.value = withSpring(newX);
-    const percent = newX / (SLIDER_WIDTH - KNOB_SIZE);
-    let newValue = min + percent * (max - min);
-    newValue = Math.round(newValue / step) * step;
-    onGestureEnd(newValue);
+    },
+    onUpdate: (event) => {
+      translateX.value = Math.min(
+        Math.max(0, context.value + event.translationX),
+        SLIDER_WIDTH - KNOB_SIZE,
+      );
+    },
   });
 
-  const composed = Gesture.Race(pan, tap);
+  const tap = useTapGesture({
+    onDeactivate: (event) => {
+      const newX = Math.min(
+        Math.max(0, event.x - KNOB_SIZE / 2),
+        SLIDER_WIDTH - KNOB_SIZE,
+      );
+      translateX.value = withSpring(newX);
+      const percent = newX / (SLIDER_WIDTH - KNOB_SIZE);
+      let newValue = min + percent * (max - min);
+      newValue = Math.round(newValue / step) * step;
+      onGestureEnd(newValue);
+    },
+  });
+
+  const composed = useCompetingGestures(pan, tap);
 
   const knobStyle = useAnimatedStyle(() => ({
     transform: [{ translateX: translateX.value }],
@@ -112,5 +119,3 @@ export const Slider = ({
     </View>
   );
 };
-
-/* eslint-enable new-cap */

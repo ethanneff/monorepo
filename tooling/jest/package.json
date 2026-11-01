@@ -1,14 +1,15 @@
 {
   "devDependencies": {
-    "@jest/globals": "30.3.0",
-    "@testing-library/jest-dom": "6.9.1",
-    "@testing-library/react": "16.3.2",
-    "@testing-library/react-native": "13.3.3",
+    "@jest/globals": "30.5.2",
+    "@react-native/jest-preset": "0.88.1",
+    "@testing-library/jest-dom": "7.0.1",
+    "@testing-library/react": "16.3.3",
+    "@testing-library/react-native": "14.1.0",
     "@types/jest": "30.0.0",
-    "jest": "30.3.0",
-    "jest-environment-jsdom": "30.3.0",
+    "jest": "30.5.2",
+    "jest-environment-jsdom": "30.5.2",
     "jest-offline": "1.0.1",
-    "react-test-renderer": "19.2.5"
+    "react-test-renderer": "19.3.0"
   },
   "exports": {
     "./react": "./src/react/jest.config.js",

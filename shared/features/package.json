@@ -1,15 +1,15 @@
 {
   "dependencies": {
-    "@react-navigation/native": "7.2.2",
+    "@react-navigation/native": "7.5.1",
     "@shared/components": "workspace:*",
     "@shared/store": "workspace:*",
     "@shared/utils": "workspace:*",
-    "@vercel/analytics": "1.5.0",
-    "@vercel/speed-insights": "1.2.0",
-    "next": "16.2.4",
-    "react": "19.2.5",
-    "react-dom": "19.2.5",
-    "react-native-web": "0.21.2"
+    "@vercel/analytics": "2.0.1",
+    "@vercel/speed-insights": "2.0.0",
+    "next": "16.4.3",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "react-native-web": "0.21.4"
   },
   "devDependencies": {
     "@tooling/eslint": "workspace:*",
